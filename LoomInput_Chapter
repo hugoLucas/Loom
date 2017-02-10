@@ -1,0 +1,10 @@
+STORY{
+    TITLE:"quest"
+    SECTION(_hugo):$dun
+    SECTION(_flores):$flores
+    LINK[_hugo->_flores]
+}
+
+SECTION{
+   TITLE:"dungeon"[$dun]
+}

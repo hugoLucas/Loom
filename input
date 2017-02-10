@@ -1,0 +1,26 @@
+START{
+    PERIOD: 1/1/2017, 1/2/2017
+    units: 1000
+    target: "ibm"
+    trigger: 50
+
+    PICK{
+        SYM: target
+        BUY: units
+            WHEN: OPEN < 50
+        SELL: units
+            WHEN: CLOSE > 100
+
+        HEDGE{
+            PUT
+            BUY: units
+                WHEN: OPEN < 10
+            STRIKE: PRICE
+        }
+    }
+
+    PICK{
+        SYM: target
+        BUY: units
+    }
+}
