@@ -25,11 +25,11 @@ chapter_links: LINK LBRAK inner_component_id ARROW inner_component_id RBRAK;
 
 // CHAPTER EXCLUSIVE GRAMMER
 
-chapter: CHAPTER LCURL title file_assignment files file_links RCURL;
+chapter: CHAPTER LCURL title (file_assignment)? files file_links RCURL;
 
 file_assignment: identifier COLON file (file_assignment)?;
 
-files: FILE (LBRAK (START|END) RBRAK)? LPAREN inner_component_id RPAREN  COLON inner_component_id (files)?;
+files: FILE (LBRAK (START|END) RBRAK)? LPAREN inner_component_id RPAREN COLON (file|identifier) (files)?;
 
 file_links: LINK LBRAK inner_component_id ARROW inner_component_id RBRAK;
 
@@ -69,7 +69,7 @@ LINK: 'LINK';
 
 ARROW: '->';
 
-NONWSSTR: [a-z]+;
+NONWSSTR: ([a-z]+ (UNDRSCORE)?)+;
 
 STR: ([a-z]+ (' ')*)+;
 
