@@ -7,4 +7,11 @@ STORY{
 
 SECTION{
    TITLE:"dungeon"[$dun]
+   CHAPTER[START](_entry):$ent
+   CHAPTER(_battle):$battle
+   LINK[_entry->_battle]
+}
+
+CHAPTER{
+
 }

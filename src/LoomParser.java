@@ -1,4 +1,4 @@
-// Generated from C:/Users/Hugo Lucas/IdeaProjects/Stock/src\Loom.g4 by ANTLR 4.6
+// Generated from Loom.g4 by ANTLR 4.6
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -98,8 +98,17 @@ public class LoomParser extends Parser {
 		public StoryContext story() {
 			return getRuleContext(StoryContext.class,0);
 		}
-		public SectionContext section() {
-			return getRuleContext(SectionContext.class,0);
+		public List<SectionContext> section() {
+			return getRuleContexts(SectionContext.class);
+		}
+		public SectionContext section(int i) {
+			return getRuleContext(SectionContext.class,i);
+		}
+		public List<ChapterContext> chapter() {
+			return getRuleContexts(ChapterContext.class);
+		}
+		public ChapterContext chapter(int i) {
+			return getRuleContext(ChapterContext.class,i);
 		}
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -118,13 +127,40 @@ public class LoomParser extends Parser {
 	public final ProgramContext program() throws RecognitionException {
 		ProgramContext _localctx = new ProgramContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_program);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(38);
 			story();
-			setState(39);
-			section();
+			setState(40); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(39);
+				section();
+				}
+				}
+				setState(42); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==SECTION );
+			setState(45); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(44);
+				chapter();
+				}
+				}
+				setState(47); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==CHAPTER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -175,27 +211,27 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(41);
+			setState(49);
 			match(STORY);
-			setState(42);
+			setState(50);
 			match(LCURL);
-			setState(43);
+			setState(51);
 			title();
-			setState(45);
+			setState(53);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NONWSSTR) {
 				{
-				setState(44);
+				setState(52);
 				section_assignment();
 				}
 			}
 
-			setState(47);
+			setState(55);
 			sections();
-			setState(48);
+			setState(56);
 			section_links();
-			setState(49);
+			setState(57);
 			match(RCURL);
 			}
 		}
@@ -242,18 +278,18 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(51);
+			setState(59);
 			identifier();
-			setState(52);
+			setState(60);
 			match(COLON);
-			setState(53);
+			setState(61);
 			component_id();
-			setState(55);
+			setState(63);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NONWSSTR) {
 				{
-				setState(54);
+				setState(62);
 				section_assignment();
 				}
 			}
@@ -313,16 +349,16 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(65);
 			match(SECTION);
-			setState(61);
+			setState(69);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LBRAK) {
 				{
-				setState(58);
+				setState(66);
 				match(LBRAK);
-				setState(59);
+				setState(67);
 				_la = _input.LA(1);
 				if ( !(_la==START || _la==END) ) {
 				_errHandler.recoverInline(this);
@@ -332,43 +368,43 @@ public class LoomParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(60);
+				setState(68);
 				match(RBRAK);
 				}
 			}
 
-			setState(63);
+			setState(71);
 			match(LPAREN);
-			setState(64);
+			setState(72);
 			inner_component_id();
-			setState(65);
+			setState(73);
 			match(RPAREN);
-			setState(66);
+			setState(74);
 			match(COLON);
-			setState(69);
+			setState(77);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case DOLLAR:
 				{
-				setState(67);
+				setState(75);
 				component_id();
 				}
 				break;
 			case NONWSSTR:
 				{
-				setState(68);
+				setState(76);
 				identifier();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(72);
+			setState(80);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==SECTION) {
 				{
-				setState(71);
+				setState(79);
 				sections();
 				}
 			}
@@ -421,24 +457,24 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
+			setState(82);
 			match(LINK);
-			setState(75);
+			setState(83);
 			match(LBRAK);
-			setState(76);
+			setState(84);
 			inner_component_id();
-			setState(77);
+			setState(85);
 			match(ARROW);
-			setState(78);
+			setState(86);
 			inner_component_id();
-			setState(79);
+			setState(87);
 			match(RBRAK);
-			setState(81);
+			setState(89);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LINK) {
 				{
-				setState(80);
+				setState(88);
 				section_links();
 				}
 			}
@@ -462,9 +498,6 @@ public class LoomParser extends Parser {
 		public TitleContext title() {
 			return getRuleContext(TitleContext.class,0);
 		}
-		public Chapter_assignmentContext chapter_assignment() {
-			return getRuleContext(Chapter_assignmentContext.class,0);
-		}
 		public ChaptersContext chapters() {
 			return getRuleContext(ChaptersContext.class,0);
 		}
@@ -472,6 +505,9 @@ public class LoomParser extends Parser {
 			return getRuleContext(Chapter_linksContext.class,0);
 		}
 		public TerminalNode RCURL() { return getToken(LoomParser.RCURL, 0); }
+		public Chapter_assignmentContext chapter_assignment() {
+			return getRuleContext(Chapter_assignmentContext.class,0);
+		}
 		public SectionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -489,22 +525,31 @@ public class LoomParser extends Parser {
 	public final SectionContext section() throws RecognitionException {
 		SectionContext _localctx = new SectionContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_section);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(83);
+			setState(91);
 			match(SECTION);
-			setState(84);
+			setState(92);
 			match(LCURL);
-			setState(85);
+			setState(93);
 			title();
-			setState(86);
-			chapter_assignment();
-			setState(87);
+			setState(95);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==NONWSSTR) {
+				{
+				setState(94);
+				chapter_assignment();
+				}
+			}
+
+			setState(97);
 			chapters();
-			setState(88);
+			setState(98);
 			chapter_links();
-			setState(89);
+			setState(99);
 			match(RCURL);
 			}
 		}
@@ -551,18 +596,18 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(91);
+			setState(101);
 			identifier();
-			setState(92);
+			setState(102);
 			match(COLON);
-			setState(93);
+			setState(103);
 			component_id();
-			setState(95);
+			setState(105);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NONWSSTR) {
 				{
-				setState(94);
+				setState(104);
 				chapter_assignment();
 				}
 			}
@@ -622,16 +667,16 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(97);
+			setState(107);
 			match(CHAPTER);
-			setState(101);
+			setState(111);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LBRAK) {
 				{
-				setState(98);
+				setState(108);
 				match(LBRAK);
-				setState(99);
+				setState(109);
 				_la = _input.LA(1);
 				if ( !(_la==START || _la==END) ) {
 				_errHandler.recoverInline(this);
@@ -641,43 +686,43 @@ public class LoomParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(100);
+				setState(110);
 				match(RBRAK);
 				}
 			}
 
-			setState(103);
+			setState(113);
 			match(LPAREN);
-			setState(104);
+			setState(114);
 			inner_component_id();
-			setState(105);
+			setState(115);
 			match(RPAREN);
-			setState(106);
+			setState(116);
 			match(COLON);
-			setState(109);
+			setState(119);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case DOLLAR:
 				{
-				setState(107);
+				setState(117);
 				component_id();
 				}
 				break;
 			case NONWSSTR:
 				{
-				setState(108);
+				setState(118);
 				identifier();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(112);
+			setState(122);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CHAPTER) {
 				{
-				setState(111);
+				setState(121);
 				chapters();
 				}
 			}
@@ -726,17 +771,17 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114);
+			setState(124);
 			match(LINK);
-			setState(115);
+			setState(125);
 			match(LBRAK);
-			setState(116);
+			setState(126);
 			inner_component_id();
-			setState(117);
+			setState(127);
 			match(ARROW);
-			setState(118);
+			setState(128);
 			inner_component_id();
-			setState(119);
+			setState(129);
 			match(RBRAK);
 			}
 		}
@@ -787,19 +832,19 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(121);
+			setState(131);
 			match(CHAPTER);
-			setState(122);
+			setState(132);
 			match(LCURL);
-			setState(123);
+			setState(133);
 			title();
-			setState(124);
+			setState(134);
 			file_assignment();
-			setState(125);
+			setState(135);
 			files();
-			setState(126);
+			setState(136);
 			file_links();
-			setState(127);
+			setState(137);
 			match(RCURL);
 			}
 		}
@@ -846,18 +891,18 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(129);
+			setState(139);
 			identifier();
-			setState(130);
+			setState(140);
 			match(COLON);
-			setState(131);
+			setState(141);
 			file();
-			setState(133);
+			setState(143);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NONWSSTR) {
 				{
-				setState(132);
+				setState(142);
 				file_assignment();
 				}
 			}
@@ -914,16 +959,16 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(135);
+			setState(145);
 			match(FILE);
-			setState(139);
+			setState(149);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LBRAK) {
 				{
-				setState(136);
+				setState(146);
 				match(LBRAK);
-				setState(137);
+				setState(147);
 				_la = _input.LA(1);
 				if ( !(_la==START || _la==END) ) {
 				_errHandler.recoverInline(this);
@@ -933,27 +978,27 @@ public class LoomParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(138);
+				setState(148);
 				match(RBRAK);
 				}
 			}
 
-			setState(141);
+			setState(151);
 			match(LPAREN);
-			setState(142);
+			setState(152);
 			inner_component_id();
-			setState(143);
+			setState(153);
 			match(RPAREN);
-			setState(144);
+			setState(154);
 			match(COLON);
-			setState(145);
+			setState(155);
 			inner_component_id();
-			setState(147);
+			setState(157);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==FILE) {
 				{
-				setState(146);
+				setState(156);
 				files();
 				}
 			}
@@ -1002,17 +1047,17 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(149);
+			setState(159);
 			match(LINK);
-			setState(150);
+			setState(160);
 			match(LBRAK);
-			setState(151);
+			setState(161);
 			inner_component_id();
-			setState(152);
+			setState(162);
 			match(ARROW);
-			setState(153);
+			setState(163);
 			inner_component_id();
-			setState(154);
+			setState(164);
 			match(RBRAK);
 			}
 		}
@@ -1064,21 +1109,21 @@ public class LoomParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(156);
+			setState(166);
 			match(QUOTE);
-			setState(157);
+			setState(167);
 			match(C);
-			setState(158);
+			setState(168);
 			match(COLON);
-			setState(159);
+			setState(169);
 			match(BKSLASH);
-			setState(168); 
+			setState(178); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(161); 
+				setState(171); 
 				_errHandler.sync(this);
 				_alt = 1;
 				do {
@@ -1086,7 +1131,7 @@ public class LoomParser extends Parser {
 					case 1:
 						{
 						{
-						setState(160);
+						setState(170);
 						match(NONWSSTR);
 						}
 						}
@@ -1094,27 +1139,27 @@ public class LoomParser extends Parser {
 					default:
 						throw new NoViableAltException(this);
 					}
-					setState(163); 
+					setState(173); 
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,13,_ctx);
+					_alt = getInterpreter().adaptivePredict(_input,16,_ctx);
 				} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
-				setState(166);
+				setState(176);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BKSLASH) {
 					{
-					setState(165);
+					setState(175);
 					match(BKSLASH);
 					}
 				}
 
 				}
 				}
-				setState(170); 
+				setState(180); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==NONWSSTR );
-			setState(172);
+			setState(182);
 			match(QUOTE);
 			}
 		}
@@ -1135,11 +1180,11 @@ public class LoomParser extends Parser {
 		public StringContext string() {
 			return getRuleContext(StringContext.class,0);
 		}
-		public TerminalNode RBRAK() { return getToken(LoomParser.RBRAK, 0); }
+		public TerminalNode LBRAK() { return getToken(LoomParser.LBRAK, 0); }
 		public Component_idContext component_id() {
 			return getRuleContext(Component_idContext.class,0);
 		}
-		public TerminalNode LBRAK() { return getToken(LoomParser.LBRAK, 0); }
+		public TerminalNode RBRAK() { return getToken(LoomParser.RBRAK, 0); }
 		public TitleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1161,23 +1206,23 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(174);
+			setState(184);
 			match(TLE);
-			setState(175);
+			setState(185);
 			match(COLON);
-			setState(176);
+			setState(186);
 			string();
-			setState(181);
+			setState(191);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==RBRAK) {
+			if (_la==LBRAK) {
 				{
-				setState(177);
-				match(RBRAK);
-				setState(178);
-				component_id();
-				setState(179);
+				setState(187);
 				match(LBRAK);
+				setState(188);
+				component_id();
+				setState(189);
+				match(RBRAK);
 				}
 			}
 
@@ -1219,9 +1264,9 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(183);
+			setState(193);
 			match(DOLLAR);
-			setState(184);
+			setState(194);
 			identifier();
 			}
 		}
@@ -1261,9 +1306,9 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(186);
+			setState(196);
 			match(UNDRSCORE);
-			setState(187);
+			setState(197);
 			identifier();
 			}
 		}
@@ -1300,7 +1345,7 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(189);
+			setState(199);
 			match(NONWSSTR);
 			}
 		}
@@ -1343,9 +1388,9 @@ public class LoomParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(191);
+			setState(201);
 			match(QUOTE);
-			setState(192);
+			setState(202);
 			_la = _input.LA(1);
 			if ( !(_la==NONWSSTR || _la==STR) ) {
 			_errHandler.recoverInline(this);
@@ -1355,7 +1400,7 @@ public class LoomParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(193);
+			setState(203);
 			match(QUOTE);
 			}
 		}
@@ -1371,63 +1416,67 @@ public class LoomParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\34\u00c6\4\2\t\2"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\34\u00d0\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\3\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3\60\n\3\3\3\3\3\3"+
-		"\3\3\3\3\4\3\4\3\4\3\4\5\4:\n\4\3\5\3\5\3\5\3\5\5\5@\n\5\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\5\5H\n\5\3\5\5\5K\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6T\n\6"+
-		"\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\5\bb\n\b\3\t\3\t\3\t"+
-		"\3\t\5\th\n\t\3\t\3\t\3\t\3\t\3\t\3\t\5\tp\n\t\3\t\5\ts\n\t\3\n\3\n\3"+
-		"\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f"+
-		"\3\f\5\f\u0088\n\f\3\r\3\r\3\r\3\r\5\r\u008e\n\r\3\r\3\r\3\r\3\r\3\r\3"+
-		"\r\5\r\u0096\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17"+
-		"\3\17\6\17\u00a4\n\17\r\17\16\17\u00a5\3\17\5\17\u00a9\n\17\6\17\u00ab"+
-		"\n\17\r\17\16\17\u00ac\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5"+
-		"\20\u00b8\n\20\3\21\3\21\3\21\3\22\3\22\3\22\3\23\3\23\3\24\3\24\3\24"+
-		"\3\24\3\24\2\2\25\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&\2\4\3\2"+
-		"\6\7\3\2\r\16\u00c3\2(\3\2\2\2\4+\3\2\2\2\6\65\3\2\2\2\b;\3\2\2\2\nL\3"+
-		"\2\2\2\fU\3\2\2\2\16]\3\2\2\2\20c\3\2\2\2\22t\3\2\2\2\24{\3\2\2\2\26\u0083"+
-		"\3\2\2\2\30\u0089\3\2\2\2\32\u0097\3\2\2\2\34\u009e\3\2\2\2\36\u00b0\3"+
-		"\2\2\2 \u00b9\3\2\2\2\"\u00bc\3\2\2\2$\u00bf\3\2\2\2&\u00c1\3\2\2\2()"+
-		"\5\4\3\2)*\5\f\7\2*\3\3\2\2\2+,\7\5\2\2,-\7\23\2\2-/\5\36\20\2.\60\5\6"+
-		"\4\2/.\3\2\2\2/\60\3\2\2\2\60\61\3\2\2\2\61\62\5\b\5\2\62\63\5\n\6\2\63"+
-		"\64\7\24\2\2\64\5\3\2\2\2\65\66\5$\23\2\66\67\7\20\2\2\679\5 \21\28:\5"+
-		"\6\4\298\3\2\2\29:\3\2\2\2:\7\3\2\2\2;?\7\b\2\2<=\7\21\2\2=>\t\2\2\2>"+
-		"@\7\22\2\2?<\3\2\2\2?@\3\2\2\2@A\3\2\2\2AB\7\25\2\2BC\5\"\22\2CD\7\26"+
-		"\2\2DG\7\20\2\2EH\5 \21\2FH\5$\23\2GE\3\2\2\2GF\3\2\2\2HJ\3\2\2\2IK\5"+
-		"\b\5\2JI\3\2\2\2JK\3\2\2\2K\t\3\2\2\2LM\7\13\2\2MN\7\21\2\2NO\5\"\22\2"+
-		"OP\7\f\2\2PQ\5\"\22\2QS\7\22\2\2RT\5\n\6\2SR\3\2\2\2ST\3\2\2\2T\13\3\2"+
-		"\2\2UV\7\b\2\2VW\7\23\2\2WX\5\36\20\2XY\5\16\b\2YZ\5\20\t\2Z[\5\22\n\2"+
-		"[\\\7\24\2\2\\\r\3\2\2\2]^\5$\23\2^_\7\20\2\2_a\5 \21\2`b\5\16\b\2a`\3"+
-		"\2\2\2ab\3\2\2\2b\17\3\2\2\2cg\7\t\2\2de\7\21\2\2ef\t\2\2\2fh\7\22\2\2"+
-		"gd\3\2\2\2gh\3\2\2\2hi\3\2\2\2ij\7\25\2\2jk\5\"\22\2kl\7\26\2\2lo\7\20"+
-		"\2\2mp\5 \21\2np\5$\23\2om\3\2\2\2on\3\2\2\2pr\3\2\2\2qs\5\20\t\2rq\3"+
-		"\2\2\2rs\3\2\2\2s\21\3\2\2\2tu\7\13\2\2uv\7\21\2\2vw\5\"\22\2wx\7\f\2"+
-		"\2xy\5\"\22\2yz\7\22\2\2z\23\3\2\2\2{|\7\t\2\2|}\7\23\2\2}~\5\36\20\2"+
-		"~\177\5\26\f\2\177\u0080\5\30\r\2\u0080\u0081\5\32\16\2\u0081\u0082\7"+
-		"\24\2\2\u0082\25\3\2\2\2\u0083\u0084\5$\23\2\u0084\u0085\7\20\2\2\u0085"+
-		"\u0087\5\34\17\2\u0086\u0088\5\26\f\2\u0087\u0086\3\2\2\2\u0087\u0088"+
-		"\3\2\2\2\u0088\27\3\2\2\2\u0089\u008d\7\n\2\2\u008a\u008b\7\21\2\2\u008b"+
-		"\u008c\t\2\2\2\u008c\u008e\7\22\2\2\u008d\u008a\3\2\2\2\u008d\u008e\3"+
-		"\2\2\2\u008e\u008f\3\2\2\2\u008f\u0090\7\25\2\2\u0090\u0091\5\"\22\2\u0091"+
-		"\u0092\7\26\2\2\u0092\u0093\7\20\2\2\u0093\u0095\5\"\22\2\u0094\u0096"+
-		"\5\30\r\2\u0095\u0094\3\2\2\2\u0095\u0096\3\2\2\2\u0096\31\3\2\2\2\u0097"+
-		"\u0098\7\13\2\2\u0098\u0099\7\21\2\2\u0099\u009a\5\"\22\2\u009a\u009b"+
-		"\7\f\2\2\u009b\u009c\5\"\22\2\u009c\u009d\7\22\2\2\u009d\33\3\2\2\2\u009e"+
-		"\u009f\7\30\2\2\u009f\u00a0\7\3\2\2\u00a0\u00a1\7\20\2\2\u00a1\u00aa\7"+
-		"\27\2\2\u00a2\u00a4\7\r\2\2\u00a3\u00a2\3\2\2\2\u00a4\u00a5\3\2\2\2\u00a5"+
-		"\u00a3\3\2\2\2\u00a5\u00a6\3\2\2\2\u00a6\u00a8\3\2\2\2\u00a7\u00a9\7\27"+
-		"\2\2\u00a8\u00a7\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00ab\3\2\2\2\u00aa"+
-		"\u00a3\3\2\2\2\u00ab\u00ac\3\2\2\2\u00ac\u00aa\3\2\2\2\u00ac\u00ad\3\2"+
-		"\2\2\u00ad\u00ae\3\2\2\2\u00ae\u00af\7\30\2\2\u00af\35\3\2\2\2\u00b0\u00b1"+
-		"\7\4\2\2\u00b1\u00b2\7\20\2\2\u00b2\u00b7\5&\24\2\u00b3\u00b4\7\22\2\2"+
-		"\u00b4\u00b5\5 \21\2\u00b5\u00b6\7\21\2\2\u00b6\u00b8\3\2\2\2\u00b7\u00b3"+
-		"\3\2\2\2\u00b7\u00b8\3\2\2\2\u00b8\37\3\2\2\2\u00b9\u00ba\7\32\2\2\u00ba"+
-		"\u00bb\5$\23\2\u00bb!\3\2\2\2\u00bc\u00bd\7\17\2\2\u00bd\u00be\5$\23\2"+
-		"\u00be#\3\2\2\2\u00bf\u00c0\7\r\2\2\u00c0%\3\2\2\2\u00c1\u00c2\7\30\2"+
-		"\2\u00c2\u00c3\t\3\2\2\u00c3\u00c4\7\30\2\2\u00c4\'\3\2\2\2\23/9?GJSa"+
-		"gor\u0087\u008d\u0095\u00a5\u00a8\u00ac\u00b7";
+		"\4\23\t\23\4\24\t\24\3\2\3\2\6\2+\n\2\r\2\16\2,\3\2\6\2\60\n\2\r\2\16"+
+		"\2\61\3\3\3\3\3\3\3\3\5\38\n\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4B\n"+
+		"\4\3\5\3\5\3\5\3\5\5\5H\n\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5P\n\5\3\5\5\5S"+
+		"\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\\\n\6\3\7\3\7\3\7\3\7\5\7b\n\7\3"+
+		"\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\5\bl\n\b\3\t\3\t\3\t\3\t\5\tr\n\t\3\t\3"+
+		"\t\3\t\3\t\3\t\3\t\5\tz\n\t\3\t\5\t}\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3"+
+		"\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\f\u0092\n\f\3"+
+		"\r\3\r\3\r\3\r\5\r\u0098\n\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00a0\n\r\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\6\17\u00ae\n\17"+
+		"\r\17\16\17\u00af\3\17\5\17\u00b3\n\17\6\17\u00b5\n\17\r\17\16\17\u00b6"+
+		"\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5\20\u00c2\n\20\3\21\3\21"+
+		"\3\21\3\22\3\22\3\22\3\23\3\23\3\24\3\24\3\24\3\24\3\24\2\2\25\2\4\6\b"+
+		"\n\f\16\20\22\24\26\30\32\34\36 \"$&\2\4\3\2\6\7\3\2\r\16\u00d0\2(\3\2"+
+		"\2\2\4\63\3\2\2\2\6=\3\2\2\2\bC\3\2\2\2\nT\3\2\2\2\f]\3\2\2\2\16g\3\2"+
+		"\2\2\20m\3\2\2\2\22~\3\2\2\2\24\u0085\3\2\2\2\26\u008d\3\2\2\2\30\u0093"+
+		"\3\2\2\2\32\u00a1\3\2\2\2\34\u00a8\3\2\2\2\36\u00ba\3\2\2\2 \u00c3\3\2"+
+		"\2\2\"\u00c6\3\2\2\2$\u00c9\3\2\2\2&\u00cb\3\2\2\2(*\5\4\3\2)+\5\f\7\2"+
+		"*)\3\2\2\2+,\3\2\2\2,*\3\2\2\2,-\3\2\2\2-/\3\2\2\2.\60\5\24\13\2/.\3\2"+
+		"\2\2\60\61\3\2\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\3\3\2\2\2\63\64\7\5\2"+
+		"\2\64\65\7\23\2\2\65\67\5\36\20\2\668\5\6\4\2\67\66\3\2\2\2\678\3\2\2"+
+		"\289\3\2\2\29:\5\b\5\2:;\5\n\6\2;<\7\24\2\2<\5\3\2\2\2=>\5$\23\2>?\7\20"+
+		"\2\2?A\5 \21\2@B\5\6\4\2A@\3\2\2\2AB\3\2\2\2B\7\3\2\2\2CG\7\b\2\2DE\7"+
+		"\21\2\2EF\t\2\2\2FH\7\22\2\2GD\3\2\2\2GH\3\2\2\2HI\3\2\2\2IJ\7\25\2\2"+
+		"JK\5\"\22\2KL\7\26\2\2LO\7\20\2\2MP\5 \21\2NP\5$\23\2OM\3\2\2\2ON\3\2"+
+		"\2\2PR\3\2\2\2QS\5\b\5\2RQ\3\2\2\2RS\3\2\2\2S\t\3\2\2\2TU\7\13\2\2UV\7"+
+		"\21\2\2VW\5\"\22\2WX\7\f\2\2XY\5\"\22\2Y[\7\22\2\2Z\\\5\n\6\2[Z\3\2\2"+
+		"\2[\\\3\2\2\2\\\13\3\2\2\2]^\7\b\2\2^_\7\23\2\2_a\5\36\20\2`b\5\16\b\2"+
+		"a`\3\2\2\2ab\3\2\2\2bc\3\2\2\2cd\5\20\t\2de\5\22\n\2ef\7\24\2\2f\r\3\2"+
+		"\2\2gh\5$\23\2hi\7\20\2\2ik\5 \21\2jl\5\16\b\2kj\3\2\2\2kl\3\2\2\2l\17"+
+		"\3\2\2\2mq\7\t\2\2no\7\21\2\2op\t\2\2\2pr\7\22\2\2qn\3\2\2\2qr\3\2\2\2"+
+		"rs\3\2\2\2st\7\25\2\2tu\5\"\22\2uv\7\26\2\2vy\7\20\2\2wz\5 \21\2xz\5$"+
+		"\23\2yw\3\2\2\2yx\3\2\2\2z|\3\2\2\2{}\5\20\t\2|{\3\2\2\2|}\3\2\2\2}\21"+
+		"\3\2\2\2~\177\7\13\2\2\177\u0080\7\21\2\2\u0080\u0081\5\"\22\2\u0081\u0082"+
+		"\7\f\2\2\u0082\u0083\5\"\22\2\u0083\u0084\7\22\2\2\u0084\23\3\2\2\2\u0085"+
+		"\u0086\7\t\2\2\u0086\u0087\7\23\2\2\u0087\u0088\5\36\20\2\u0088\u0089"+
+		"\5\26\f\2\u0089\u008a\5\30\r\2\u008a\u008b\5\32\16\2\u008b\u008c\7\24"+
+		"\2\2\u008c\25\3\2\2\2\u008d\u008e\5$\23\2\u008e\u008f\7\20\2\2\u008f\u0091"+
+		"\5\34\17\2\u0090\u0092\5\26\f\2\u0091\u0090\3\2\2\2\u0091\u0092\3\2\2"+
+		"\2\u0092\27\3\2\2\2\u0093\u0097\7\n\2\2\u0094\u0095\7\21\2\2\u0095\u0096"+
+		"\t\2\2\2\u0096\u0098\7\22\2\2\u0097\u0094\3\2\2\2\u0097\u0098\3\2\2\2"+
+		"\u0098\u0099\3\2\2\2\u0099\u009a\7\25\2\2\u009a\u009b\5\"\22\2\u009b\u009c"+
+		"\7\26\2\2\u009c\u009d\7\20\2\2\u009d\u009f\5\"\22\2\u009e\u00a0\5\30\r"+
+		"\2\u009f\u009e\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\31\3\2\2\2\u00a1\u00a2"+
+		"\7\13\2\2\u00a2\u00a3\7\21\2\2\u00a3\u00a4\5\"\22\2\u00a4\u00a5\7\f\2"+
+		"\2\u00a5\u00a6\5\"\22\2\u00a6\u00a7\7\22\2\2\u00a7\33\3\2\2\2\u00a8\u00a9"+
+		"\7\30\2\2\u00a9\u00aa\7\3\2\2\u00aa\u00ab\7\20\2\2\u00ab\u00b4\7\27\2"+
+		"\2\u00ac\u00ae\7\r\2\2\u00ad\u00ac\3\2\2\2\u00ae\u00af\3\2\2\2\u00af\u00ad"+
+		"\3\2\2\2\u00af\u00b0\3\2\2\2\u00b0\u00b2\3\2\2\2\u00b1\u00b3\7\27\2\2"+
+		"\u00b2\u00b1\3\2\2\2\u00b2\u00b3\3\2\2\2\u00b3\u00b5\3\2\2\2\u00b4\u00ad"+
+		"\3\2\2\2\u00b5\u00b6\3\2\2\2\u00b6\u00b4\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7"+
+		"\u00b8\3\2\2\2\u00b8\u00b9\7\30\2\2\u00b9\35\3\2\2\2\u00ba\u00bb\7\4\2"+
+		"\2\u00bb\u00bc\7\20\2\2\u00bc\u00c1\5&\24\2\u00bd\u00be\7\21\2\2\u00be"+
+		"\u00bf\5 \21\2\u00bf\u00c0\7\22\2\2\u00c0\u00c2\3\2\2\2\u00c1\u00bd\3"+
+		"\2\2\2\u00c1\u00c2\3\2\2\2\u00c2\37\3\2\2\2\u00c3\u00c4\7\32\2\2\u00c4"+
+		"\u00c5\5$\23\2\u00c5!\3\2\2\2\u00c6\u00c7\7\17\2\2\u00c7\u00c8\5$\23\2"+
+		"\u00c8#\3\2\2\2\u00c9\u00ca\7\r\2\2\u00ca%\3\2\2\2\u00cb\u00cc\7\30\2"+
+		"\2\u00cc\u00cd\t\3\2\2\u00cd\u00ce\7\30\2\2\u00ce\'\3\2\2\2\26,\61\67"+
+		"AGOR[akqy|\u0091\u0097\u009f\u00af\u00b2\u00b6\u00c1";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

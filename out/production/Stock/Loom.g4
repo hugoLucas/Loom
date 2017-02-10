@@ -1,7 +1,7 @@
 grammar Loom;
 
 // STORY EXCLUSIVE GRAMMER
-program: story section;
+program: story section+ chapter+;
 
 story: STORY LCURL title (section_assignment)? sections section_links RCURL;
 
@@ -14,7 +14,7 @@ section_links: LINK LBRAK inner_component_id ARROW inner_component_id RBRAK (sec
 
 // SECTION EXCLUSIVE GRAMMER
 
-section: SECTION LCURL title chapter_assignment chapters chapter_links RCURL;
+section: SECTION LCURL title (chapter_assignment)? chapters chapter_links RCURL;
 
 chapter_assignment: identifier COLON component_id (chapter_assignment)?;
 
@@ -37,7 +37,7 @@ file: QUOTE C COLON BKSLASH (NONWSSTR+ BKSLASH?)+ QUOTE;
 
 // SHARED GRAMMER
 
-title: TLE COLON string (RBRAK component_id LBRAK)?;
+title: TLE COLON string (LBRAK component_id RBRAK)?;
 
 component_id: DOLLAR identifier;
 
