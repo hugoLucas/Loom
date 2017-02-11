@@ -2,25 +2,31 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import org.omg.CORBA.portable.InputStream;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        File inputFile = new File("C:\\Users\\Hugo Lucas\\IdeaProjects\\Stock\\input");
+        String inputString = fileToString("C:\\Users\\Hugo Lucas\\IdeaProjects\\Loom\\LoomInput_Chapter");
+        ANTLRInputStream input = new ANTLRInputStream(inputString);
+        LoomLexer lexer = new LoomLexer(input);
 
-        ANTLRInputStream input = new ANTLRInputStream(System.in);
-
-        StockLexer lexer = new StockLexer(input);
-
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-
-        for (Token token = lexer.nextToken(); token.getType() != Token.EOF; token = lexer.nextToken()) {
+        for (Token token = lexer.nextToken(); token.getType() != Token.EOF; token = lexer.nextToken())
             System.out.println(token.toString());
+    }
+
+    public static String fileToString(String path) throws IOException {
+        FileInputStream is = new FileInputStream(path);
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+
+        String line = buf.readLine();
+        StringBuilder sb = new StringBuilder();
+
+        while(line != null){
+            sb.append(line).append("\n");
+            line = buf.readLine();
         }
-        // StockParser parser = new StockParser(tokens);
-        // ParseTree tree = parser.program(); // begin parsing at init rule
-        // System.out.println(tree.toStringTree(parser)); // print LISP-style tree
+
+        return sb.toString();
     }
 }
