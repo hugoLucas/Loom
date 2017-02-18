@@ -1,11 +1,18 @@
 grammar Loom;
 
 // STORY EXCLUSIVE GRAMMER
+<<<<<<< HEAD
 
 program: story section chapter+ page+;
 
 story: STORY LCURL title (section_assignment)? sections link? RCURL;
 
+=======
+program: story section chapter+ page+;
+
+story: STORY LCURL title (section_assignment)? sections link? RCURL;
+
+>>>>>>> acf9fbafd8c646e003257ed1fb37bfd1c493e5bb
 section_assignment: identifier COLON component_id (section_assignment)?;
 
 sections: SECTION (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (sections)? ;
@@ -17,6 +24,7 @@ section: SECTION LCURL title (chapter_assignment)? chapters link? RCURL;
 chapter_assignment: identifier COLON component_id (chapter_assignment)?;
 
 chapters: CHAPTER (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (chapters)?;
+<<<<<<< HEAD
 
 // CHAPTER EXCLUSIVE GRAMMER
 
@@ -27,6 +35,18 @@ page_assignment: identifier COLON component_id (page_assignment)?;
 pages: PAGE (LBRAK (START|END) RBRAK)? COLON (component_id|identifier);
 
 page_links: LINK LBRAK (component_id|identifier) DOT (component_id|identifier) RBRAK LBRAK (component_id|identifier) RBRAK;
+=======
+
+// CHAPTER EXCLUSIVE GRAMMER
+
+chapter: CHAPTER LCURL title (page_assignment)? pages page_links? RCURL;
+
+page_assignment: identifier COLON component_id (page_assignment)?;
+
+pages: PAGE (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (pages)?;
+
+page_links: LINK LBRAK (component_id|identifier) DOT (component_id|identifier) RBRAK LBRAK (component_id|identifier) RBRAK (page_links)?;
+>>>>>>> acf9fbafd8c646e003257ed1fb37bfd1c493e5bb
 
 // PAGE EXCLUSIVE GRAMMER
 

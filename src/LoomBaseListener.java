@@ -63,18 +63,6 @@ public class LoomBaseListener implements LoomListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSection_links(LoomParser.Section_linksContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSection_links(LoomParser.Section_linksContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterSection(LoomParser.SectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -111,18 +99,6 @@ public class LoomBaseListener implements LoomListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterChapter_links(LoomParser.Chapter_linksContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitChapter_links(LoomParser.Chapter_linksContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterChapter(LoomParser.ChapterContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -135,49 +111,73 @@ public class LoomBaseListener implements LoomListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFile_assignment(LoomParser.File_assignmentContext ctx) { }
+	@Override public void enterPage_assignment(LoomParser.Page_assignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFile_assignment(LoomParser.File_assignmentContext ctx) { }
+	@Override public void exitPage_assignment(LoomParser.Page_assignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFiles(LoomParser.FilesContext ctx) { }
+	@Override public void enterPages(LoomParser.PagesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFiles(LoomParser.FilesContext ctx) { }
+	@Override public void exitPages(LoomParser.PagesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFile_links(LoomParser.File_linksContext ctx) { }
+	@Override public void enterPage_links(LoomParser.Page_linksContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFile_links(LoomParser.File_linksContext ctx) { }
+	@Override public void exitPage_links(LoomParser.Page_linksContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFile(LoomParser.FileContext ctx) { }
+	@Override public void enterPage(LoomParser.PageContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFile(LoomParser.FileContext ctx) { }
+	@Override public void exitPage(LoomParser.PageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterText(LoomParser.TextContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitText(LoomParser.TextContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOption(LoomParser.OptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOption(LoomParser.OptionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -195,6 +195,18 @@ public class LoomBaseListener implements LoomListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLink(LoomParser.LinkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLink(LoomParser.LinkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterComponent_id(LoomParser.Component_idContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -202,18 +214,6 @@ public class LoomBaseListener implements LoomListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitComponent_id(LoomParser.Component_idContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterInner_component_id(LoomParser.Inner_component_idContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitInner_component_id(LoomParser.Inner_component_idContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

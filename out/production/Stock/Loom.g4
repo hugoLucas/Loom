@@ -1,47 +1,48 @@
 grammar Loom;
 
 // STORY EXCLUSIVE GRAMMER
-program: story section+ chapter+;
 
-story: STORY LCURL title (section_assignment)? sections section_links RCURL;
+program: story section chapter+ page+;
+
+story: STORY LCURL title (section_assignment)? sections link? RCURL;
 
 section_assignment: identifier COLON component_id (section_assignment)?;
 
-sections: SECTION (LBRAK (START|END) RBRAK)? LPAREN inner_component_id RPAREN COLON (component_id|identifier) (sections)? ;
-
-section_links: LINK LBRAK inner_component_id ARROW inner_component_id RBRAK (section_links)?;
-
+sections: SECTION (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (sections)? ;
 
 // SECTION EXCLUSIVE GRAMMER
 
-section: SECTION LCURL title (chapter_assignment)? chapters chapter_links RCURL;
+section: SECTION LCURL title (chapter_assignment)? chapters link? RCURL;
 
 chapter_assignment: identifier COLON component_id (chapter_assignment)?;
 
-chapters: CHAPTER (LBRAK (START|END) RBRAK)? LPAREN inner_component_id RPAREN COLON (component_id|identifier) (chapters)?;
-
-chapter_links: LINK LBRAK inner_component_id ARROW inner_component_id RBRAK;
-
+chapters: CHAPTER (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (chapters)?;
 
 // CHAPTER EXCLUSIVE GRAMMER
 
-chapter: CHAPTER LCURL title file_assignment files file_links RCURL;
+chapter: CHAPTER LCURL title (page_assignment)? pages* page_links* RCURL;
 
-file_assignment: identifier COLON file (file_assignment)?;
+page_assignment: identifier COLON component_id (page_assignment)?;
 
-files: FILE (LBRAK (START|END) RBRAK)? LPAREN inner_component_id RPAREN  COLON inner_component_id (files)?;
+pages: PAGE (LBRAK (START|END) RBRAK)? COLON (component_id|identifier);
 
-file_links: LINK LBRAK inner_component_id ARROW inner_component_id RBRAK;
+page_links: LINK LBRAK (component_id|identifier) DOT (component_id|identifier) RBRAK LBRAK (component_id|identifier) RBRAK;
 
-file: QUOTE C COLON BKSLASH (NONWSSTR+ BKSLASH?)+ QUOTE;
+// PAGE EXCLUSIVE GRAMMER
+
+page: PAGE LCURL title text option? RCURL;
+
+text: TEXT COLON string;
+
+option: OPT LBRAK component_id RBRAK COLON string (option)?;
 
 // SHARED GRAMMER
 
 title: TLE COLON string (LBRAK component_id RBRAK)?;
 
-component_id: DOLLAR identifier;
+link: LINK LBRAK (component_id|identifier) ARROW (component_id|identifier) RBRAK (link)?;
 
-inner_component_id: UNDRSCORE identifier;
+component_id: DOLLAR identifier;
 
 identifier: NONWSSTR;
 
@@ -65,11 +66,17 @@ CHAPTER: 'CHAPTER';
 
 FILE: 'FILE';
 
+PAGE: 'PAGE';
+
+TEXT: 'TEXT';
+
 LINK: 'LINK';
+
+OPT: 'OPTION';
 
 ARROW: '->';
 
-NONWSSTR: [a-z]+;
+NONWSSTR: ([a-z]+ (UNDRSCORE)?)+;
 
 STR: ([a-z]+ (' ')*)+;
 
@@ -96,6 +103,8 @@ QUOTE: '"';
 SPC: ' ';
 
 DOLLAR: '$';
+
+DOT: '.';
 
 WS:	[ \t\r\n]+ -> skip;
 

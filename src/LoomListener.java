@@ -47,16 +47,6 @@ public interface LoomListener extends ParseTreeListener {
 	 */
 	void exitSections(LoomParser.SectionsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LoomParser#section_links}.
-	 * @param ctx the parse tree
-	 */
-	void enterSection_links(LoomParser.Section_linksContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LoomParser#section_links}.
-	 * @param ctx the parse tree
-	 */
-	void exitSection_links(LoomParser.Section_linksContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link LoomParser#section}.
 	 * @param ctx the parse tree
 	 */
@@ -87,16 +77,6 @@ public interface LoomListener extends ParseTreeListener {
 	 */
 	void exitChapters(LoomParser.ChaptersContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LoomParser#chapter_links}.
-	 * @param ctx the parse tree
-	 */
-	void enterChapter_links(LoomParser.Chapter_linksContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LoomParser#chapter_links}.
-	 * @param ctx the parse tree
-	 */
-	void exitChapter_links(LoomParser.Chapter_linksContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link LoomParser#chapter}.
 	 * @param ctx the parse tree
 	 */
@@ -107,45 +87,65 @@ public interface LoomListener extends ParseTreeListener {
 	 */
 	void exitChapter(LoomParser.ChapterContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LoomParser#file_assignment}.
+	 * Enter a parse tree produced by {@link LoomParser#page_assignment}.
 	 * @param ctx the parse tree
 	 */
-	void enterFile_assignment(LoomParser.File_assignmentContext ctx);
+	void enterPage_assignment(LoomParser.Page_assignmentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LoomParser#file_assignment}.
+	 * Exit a parse tree produced by {@link LoomParser#page_assignment}.
 	 * @param ctx the parse tree
 	 */
-	void exitFile_assignment(LoomParser.File_assignmentContext ctx);
+	void exitPage_assignment(LoomParser.Page_assignmentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LoomParser#files}.
+	 * Enter a parse tree produced by {@link LoomParser#pages}.
 	 * @param ctx the parse tree
 	 */
-	void enterFiles(LoomParser.FilesContext ctx);
+	void enterPages(LoomParser.PagesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LoomParser#files}.
+	 * Exit a parse tree produced by {@link LoomParser#pages}.
 	 * @param ctx the parse tree
 	 */
-	void exitFiles(LoomParser.FilesContext ctx);
+	void exitPages(LoomParser.PagesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LoomParser#file_links}.
+	 * Enter a parse tree produced by {@link LoomParser#page_links}.
 	 * @param ctx the parse tree
 	 */
-	void enterFile_links(LoomParser.File_linksContext ctx);
+	void enterPage_links(LoomParser.Page_linksContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LoomParser#file_links}.
+	 * Exit a parse tree produced by {@link LoomParser#page_links}.
 	 * @param ctx the parse tree
 	 */
-	void exitFile_links(LoomParser.File_linksContext ctx);
+	void exitPage_links(LoomParser.Page_linksContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LoomParser#file}.
+	 * Enter a parse tree produced by {@link LoomParser#page}.
 	 * @param ctx the parse tree
 	 */
-	void enterFile(LoomParser.FileContext ctx);
+	void enterPage(LoomParser.PageContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LoomParser#file}.
+	 * Exit a parse tree produced by {@link LoomParser#page}.
 	 * @param ctx the parse tree
 	 */
-	void exitFile(LoomParser.FileContext ctx);
+	void exitPage(LoomParser.PageContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LoomParser#text}.
+	 * @param ctx the parse tree
+	 */
+	void enterText(LoomParser.TextContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LoomParser#text}.
+	 * @param ctx the parse tree
+	 */
+	void exitText(LoomParser.TextContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LoomParser#option}.
+	 * @param ctx the parse tree
+	 */
+	void enterOption(LoomParser.OptionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LoomParser#option}.
+	 * @param ctx the parse tree
+	 */
+	void exitOption(LoomParser.OptionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LoomParser#title}.
 	 * @param ctx the parse tree
@@ -157,6 +157,16 @@ public interface LoomListener extends ParseTreeListener {
 	 */
 	void exitTitle(LoomParser.TitleContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LoomParser#link}.
+	 * @param ctx the parse tree
+	 */
+	void enterLink(LoomParser.LinkContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LoomParser#link}.
+	 * @param ctx the parse tree
+	 */
+	void exitLink(LoomParser.LinkContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LoomParser#component_id}.
 	 * @param ctx the parse tree
 	 */
@@ -166,16 +176,6 @@ public interface LoomListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitComponent_id(LoomParser.Component_idContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LoomParser#inner_component_id}.
-	 * @param ctx the parse tree
-	 */
-	void enterInner_component_id(LoomParser.Inner_component_idContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LoomParser#inner_component_id}.
-	 * @param ctx the parse tree
-	 */
-	void exitInner_component_id(LoomParser.Inner_component_idContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LoomParser#identifier}.
 	 * @param ctx the parse tree
