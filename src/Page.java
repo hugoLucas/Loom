@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Page {
 
     private String pageTitle;
-    private String pageIdentifer;
+    private String pageIdentifier;
     private String pageText;
     private ArrayList<PageOption> pageOptions;
 
     public Page(){
         this.pageTitle = null;
-        this.pageIdentifer = null;
+        this.pageIdentifier = null;
         this.pageText = null;
         this.pageOptions = new ArrayList<>();
     }
@@ -26,11 +26,11 @@ public class Page {
     }
 
     public String getPageIdentifer() {
-        return pageIdentifer;
+        return pageIdentifier;
     }
 
     public void setPageIdentifer(String pageIdentifer) {
-        this.pageIdentifer = pageIdentifer;
+        this.pageIdentifier = pageIdentifer;
     }
 
     public String getPageText() {

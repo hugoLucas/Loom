@@ -36,7 +36,6 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
                         compID.getComponentID(),
                         def.STRING().getText()
                 );
-
             }
 
         }else if(ctx.getStart().getType() == NONWSSTR){ /* Assignment  */

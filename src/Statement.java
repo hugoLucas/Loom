@@ -1,4 +1,3 @@
-import javax.swing.plaf.nimbus.State;
 
 /**
  * Created by hugoj on 3/24/2017.
@@ -22,4 +21,6 @@ public abstract class Statement {
     public String returnErrorMessage(){
         return this.errorHandler.getErrorMessage();
     }
+
+    abstract String getStatementType();
 }

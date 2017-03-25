@@ -29,4 +29,9 @@ public class Title extends Statement{
     public boolean hasIdentifier(){
         return this.titleIdentifier != null;
     }
+
+    @Override
+    public String getStatementType() {
+        return "TITLE";
+    }
 }

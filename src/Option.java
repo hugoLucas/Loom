@@ -18,4 +18,9 @@ public class Option extends Statement {
     public String getOptionText() {
         return optionText;
     }
+
+    @Override
+    public String getStatementType() {
+        return "OPTION";
+    }
 }

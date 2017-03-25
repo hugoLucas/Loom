@@ -13,4 +13,9 @@ public class Text extends Statement {
     public String getTextString(){
         return this.textString;
     }
+
+    @Override
+    public String getStatementType() {
+        return "TITLE";
+    }
 }
