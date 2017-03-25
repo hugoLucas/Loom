@@ -1,46 +1,9 @@
-STORY{
-    TITLE: "my_first_story"
-
-    SEC[START]: $p_one
-}
-
-SECTION{
-    TITLE: "beginning"[$p_one]
-
-    c_one: $ch_one
-    c_two: $ch_two
-
-    CHAPT[START]: c_one
-    CHAPT[END]: c_two
-
-    LINK[c_one -> c_two]
-}
-
-CHAPTER{
-    TITLE:"library"[$ch_one]
-
-    one:$pg_one
-    two:$pg_two
-    three:$pg_three
-    four:$pg_four
-
-    PG[START]:one
-    PG:two
-    PG:three
-    PG[END]:four
-
-    LINK[one.$a][two]
-    LINK[one.$b][three]
-    LINK[two.$c][four]
-    LINK[three.$d][four]
-}
-
 PAGE {
-     TITLE:"page_one"[$pg_one]
-     TEXT:"you are in a library"
+    TITLE:"page_one"[$pg_one]
+    TEXT:"you are in a library"
 
-      OPTION[$a]:"do nothing"
-      OPTION[$b]:"check pockets"
+    OPTION[$a]:"do nothing"
+    OPTION[$b]:"check pockets"
 }
 
 PAGE{
@@ -80,4 +43,53 @@ PAGE{
     TITLE:"page_six"[$pg_six]
 
     TEXT:"you have caught dysentery"
+}
+
+CHAPTER{
+    TITLE:"library"[$ch_one]
+
+    one:$pg_one
+    two:$pg_two
+    three:$pg_three
+    four:$pg_four
+
+    PG[START]:one
+    PG:two
+    PG:three
+    PG[END]:four
+
+    LINK[one.$a][two]
+    LINK[one.$b][three]
+    LINK[two.$c][four]
+    LINK[three.$d][four]
+}
+
+CHAPTER{
+    TITLE:"oregon"[$ch_two]
+
+    five:$pg_five
+    six:$pg_six
+
+    PG[START]:five
+    PG[END]:six
+
+    LINK[five.$e][six]
+}
+
+SECTION{
+    TITLE: "beginning"[$p_one]
+
+    c_one: $ch_one
+    c_two: $ch_two
+
+    CHAPT[START]: c_one
+    CHAPT[END]: c_two
+
+    LINK[c_one -> c_two]
+}
+
+STORY{
+    TITLE: "my_first_story"
+
+    SEC[START]: $p_one
 }
