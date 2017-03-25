@@ -104,12 +104,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterProgram(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitProgram(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -162,12 +159,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_sections; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterSections(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitSections(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitSections(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -232,12 +226,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_statements; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterStatements(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitStatements(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitStatements(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -312,12 +303,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_title; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterTitle(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitTitle(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitTitle(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -380,12 +368,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_definition; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterDefinition(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitDefinition(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitDefinition(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -478,12 +463,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_assignment; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterAssignment(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitAssignment(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitAssignment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -541,12 +523,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_link; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterLink(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitLink(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitLink(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -671,12 +650,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_if_statement; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterIf_statement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitIf_statement(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitIf_statement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -721,12 +697,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_component_id; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterComponent_id(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitComponent_id(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitComponent_id(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -764,12 +737,9 @@ public class Loom2Parser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_reference; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).enterReference(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof Loom2Listener ) ((Loom2Listener)listener).exitReference(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Loom2Visitor ) return ((Loom2Visitor<? extends T>)visitor).visitReference(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

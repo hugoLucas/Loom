@@ -25,7 +25,15 @@ public class SyntaxAnalyzer extends Loom2BaseListener {
      * Used to verify statements only appear in the correct context
      */
     private int currentSectionType;
+
+    /**
+     * Map containing all component ids used so far
+     */
     private Map<String, Page> pageTable = new HashMap<>();
+
+    /**
+     * The current page being constructed from input
+     */
     private Page currentPage;
 
     @Override public void enterDefinition(Loom2Parser.DefinitionContext ctx) {

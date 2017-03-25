@@ -9,22 +9,22 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String inputString = fileToString("C:\\Users\\Hugo\\IdeaProjects\\Loom2\\input.txt");
+        String inputString = fileToString("C:\\Users\\hugoj\\IdeaProjects\\Loom2\\input.txt");
         ANTLRInputStream input = new ANTLRInputStream(inputString);
         Loom2Lexer lexer = new Loom2Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-        /*Vocabulary v = lexer.getVocabulary();
-        for(Token t = lexer.nextToken(); t.getType() != Token.EOF; t = lexer.nextToken()) {
-            System.out.println(v.getSymbolicName(t.getType()) + " \'" + t.getText() + "\'");
-            //System.out.println(" --> " + t.toString());
-        }*/
-
         Loom2Parser parser = new Loom2Parser(tokens);
         ParseTree tree = parser.program();
 
-        ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(new SyntaxAnalyzer(), tree);
+        /*ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk(new SyntaxAnalyzer(), tree);*/
+
+        ProgramVisitor vis = new ProgramVisitor();
+        Program prog = vis.visit(tree);
+
+        if(prog.wasThereAnError())
+            System.out.println(prog.returnErrorMessage());
     }
 
     public static String fileToString(String path) throws IOException {
