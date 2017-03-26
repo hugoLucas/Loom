@@ -4,6 +4,7 @@
 public class Text extends Statement {
 
     private String textString;
+    public static String TEXT = "TEXT";
 
     public Text(String textString){
         super();
@@ -16,6 +17,6 @@ public class Text extends Statement {
 
     @Override
     public String getStatementType() {
-        return "TITLE";
+        return TEXT;
     }
 }

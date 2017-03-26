@@ -5,6 +5,7 @@ public class Title extends Statement{
 
     private String titleContents;
     private String titleIdentifier;
+    public static String TITLE = "TITLE";
 
     public Title(String titleContents, String titleIdentifier){
         super();
@@ -32,6 +33,6 @@ public class Title extends Statement{
 
     @Override
     public String getStatementType() {
-        return "TITLE";
+        return TITLE;
     }
 }

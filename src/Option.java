@@ -5,6 +5,8 @@ public class Option extends Statement {
     private String optionIdentifier;
     private String optionText;
 
+    public static String OPTION = "OPTION";
+
     public Option(String optionIdentifier, String optionText){
         super();
         this.optionIdentifier = optionIdentifier;
@@ -21,6 +23,6 @@ public class Option extends Statement {
 
     @Override
     public String getStatementType() {
-        return "OPTION";
+        return OPTION;
     }
 }

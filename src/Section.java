@@ -1,9 +1,11 @@
 /**
  * Created by hugoj on 3/24/2017.
  */
-public class Section {
+public abstract class Section {
 
     private ErrorObject errorHandler;
+
+    public Section(){ this.errorHandler = new ErrorObject(); }
 
     public Section(String message){
         this.errorHandler = new ErrorObject(message, true);

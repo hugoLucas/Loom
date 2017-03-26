@@ -1,5 +1,6 @@
 PAGE {
     TITLE:"page_one"[$pg_one]
+
     TEXT:"you are in a library"
 
     OPTION[$a]:"do nothing"
@@ -26,7 +27,7 @@ PAGE{
     TITLE:"page_four"[$pg_four]
 
     TEXT:"the library catches on fire"
-    IF[two.$c]:
+    IF[$pg_two.$c]:
         TEXT:"everything catches on fire"
     ENDIF
 }

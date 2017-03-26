@@ -7,7 +7,6 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
     private int NONWSSTR = 30;
     private int TITLE = 27;
     private int LINK = 18;
-    private int IF = 17;
 
 
     @Override
@@ -44,6 +43,8 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
             System.out.println(ctx.getStart().getText());
         }else{ /* If Statement  */
             System.out.println(ctx.getStart().getText());
+            IfStatementVisitor vis = new IfStatementVisitor();
+            IfStatement ifStmt = ctx.accept(vis);
         }
         return null;
     }

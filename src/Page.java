@@ -1,20 +1,28 @@
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 /**
  * Created by Hugo on 3/23/2017.
  */
-public class Page {
+public class Page extends Section{
 
     private String pageTitle;
     private String pageIdentifier;
     private String pageText;
-    private ArrayList<PageOption> pageOptions;
+
+    private ArrayList<String> optionText;
+    private ArrayList<String> optionIdentifier;
+    private boolean duplicateIdentifers;
 
     public Page(){
+        super();
         this.pageTitle = null;
         this.pageIdentifier = null;
         this.pageText = null;
-        this.pageOptions = new ArrayList<>();
+
+        this.optionText = new ArrayList<>();
+        this.optionIdentifier = new ArrayList<>();
+        this.duplicateIdentifers = false;
     }
 
     public String getPageTitle() {
@@ -41,12 +49,17 @@ public class Page {
         this.pageText = pageText;
     }
 
-    public ArrayList<PageOption> getPageOptions() {
-        return pageOptions;
+    public void addPageOptions(String optionText, String optionIdentifier) {
+        this.optionText.add(optionText);
+
+        if(!this.optionIdentifier.contains(optionIdentifier))
+            this.optionIdentifier.add(optionIdentifier);
+        else
+            this.duplicateIdentifers = true;
     }
 
-    public void addPageOptions(String optionText, String optionIdentifer) {
-        this.pageOptions = pageOptions;
+    public boolean hasDuplicateIdentifers(){
+        return this.duplicateIdentifers;
     }
 
     public boolean checkCompleteness(){
@@ -55,16 +68,5 @@ public class Page {
         boolean c = this.getPageIdentifer() != null;
 
         return (a && b && c);
-    }
-
-    private class PageOption{
-
-        private String optionIdentifier;
-        private String optionText;
-
-        public PageOption(String identifier, String text){
-            this.optionIdentifier = identifier;
-            this.optionText = text;
-        }
     }
 }

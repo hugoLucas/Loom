@@ -20,7 +20,7 @@ if_statement: IF RBRAK reference LBRAK COLON definition ENDIF;
 
 component_id: DOLLAR NONWSSTR ;
 
-reference: NONWSSTR DOT component_id ;
+reference: (component_id | NONWSSTR) DOT component_id ;
 
 SEC_IDENT: (STORY | SECTION | CHAPTER | PAGE) ;
 
