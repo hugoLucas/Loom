@@ -42,6 +42,10 @@ public abstract class Definition extends Statement {
         definitionTargetString = null;
     }
 
+    public Definition(String errorMessage){
+        super(errorMessage);
+    }
+
     public String getDefinitionKeyIndent(){
         return this.definitionKeyIndent;
     }

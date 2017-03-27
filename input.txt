@@ -54,7 +54,7 @@ CHAPTER{
     three:$pg_three
     four:$pg_four
 
-    PG[START]:one
+   PG[START]:one
     PG:two
     PG:three
     PG[END]:four

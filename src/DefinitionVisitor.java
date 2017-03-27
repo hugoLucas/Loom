@@ -1,3 +1,5 @@
+import org.omg.PortableServer.LIFESPAN_POLICY_ID;
+
 /**
  * Created by hugoj on 3/27/2017.
  */
@@ -16,6 +18,21 @@ public class DefinitionVisitor extends Loom2BaseVisitor<Definition> {
             String optionTextString = ctx.STRING().getText();
 
             return new Option(optionComponentId.getComponentID(), optionTextString);
+        }else if(definitionType.equals(Pg.PG)){
+            boolean start = false;
+            boolean end = false;
+
+            if(ctx.TIME_IDENT() != null) {
+                if (ctx.TIME_IDENT().getText().equals("END"))
+                    end = true;
+                else if (ctx.TIME_IDENT().getText().equals("START"))
+                    start = true;
+            }
+
+            if(ctx.NONWSSTR() != null)
+                return new Pg(ctx.NONWSSTR().getText(), start, end);
+            else if(ctx.component_id() != null)
+                return new Pg(ctx.component_id(0).accept(new ComponentIDVisitor()), start, end);
         }
 
         return null;

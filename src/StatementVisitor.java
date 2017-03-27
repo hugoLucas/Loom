@@ -19,15 +19,13 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
         }else if(ctx.getStart().getType() == KEY_INDENT){ /* Definition */
             return ctx.definition().accept( new DefinitionVisitor());
         }else if(ctx.getStart().getType() == NONWSSTR){ /* Assignment  */
-            System.out.println(ctx.getStart().getText());
-
+            return ctx.assignment().accept(new AssignmentVisitor());
         }else if(ctx.getStart().getType() == LINK){ /* Link  */
-            System.out.println(ctx.getStart().getText());
+            System.out.println(ctx.getText());
+            return ctx.link().accept(new LinkVisitor());
         }else{ /* If Statement  */
             return ctx.accept(new IfStatementVisitor());
         }
-
-        return null;
     }
 
     public boolean titleInStory(Loom2Parser.StatementsContext ctx){

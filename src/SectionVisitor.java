@@ -26,23 +26,33 @@ public class SectionVisitor extends Loom2BaseVisitor<Section> {
     }
 
     public Section constructSection(List<Statement> stmts, Loom2Parser.SectionsContext ctx){
-        String sectionName = ctx.getParent().getStart().getText();
+        String sectionName = ctx.getStart().getText();
 
         if(sectionName.equals("PAGE")){
             System.out.print("Constructing page... ");
             return constructPageSection(stmts, ctx);
+        }else if(sectionName.equals("CHAPTER")){
+            System.out.print("Constructing chapter... ");
+            return constructChapterSection(stmts, ctx);
         }
 
         return null;
     }
 
+    private Section constructChapterSection(List<Statement> stmts, Loom2Parser.SectionsContext ctx) {
+        return null;
+    }
+
     public boolean statementInCorrectSection(Loom2Parser.SectionsContext ctx, Statement stmt){
-        String sectionName = ctx.getParent().getStart().getText();
+        String sectionName = ctx.getStart().getText();
 
         if(sectionName.equals("PAGE"))
             if( stmt instanceof  Title || stmt instanceof Text || stmt instanceof Option || stmt instanceof IfStatement)
                 return true;
 
+        if(sectionName.equals("CHAPTER"))
+            if( stmt instanceof Title || stmt instanceof Assignment || stmt instanceof Pg || stmt instanceof Link)
+                return true;
         return false;
     }
 
