@@ -12,40 +12,21 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
     @Override
     public Statement visitStatements(Loom2Parser.StatementsContext ctx) {
         if(ctx.getStart().getType() == TITLE){ /* Title */
-
-            TitleVisitor tlVisitor = new TitleVisitor();
-            Title stmt = ctx.title().accept(tlVisitor);
-
+            Title stmt = ctx.title().accept(new TitleVisitor());
             if(!titleInStory(ctx) && !stmt.hasIdentifier())
                 return new Title("TITLE W/O IDENTIFIER: " + ctx.getStart().getLine());
             return stmt;
-
         }else if(ctx.getStart().getType() == KEY_INDENT){ /* Definition */
-
-            String keyWord = ctx.getStart().getText();
-            Loom2Parser.DefinitionContext def = ctx.definition();
-
-            if(keyWord.equals("TEXT")){
-                return new Text(def.STRING().getText());
-            }else if(keyWord.equals("OPTION")){
-                ComponentIDVisitor vis = new ComponentIDVisitor();
-                ComponentID compID = def.component_id(0).accept(vis);
-
-                return new Option(
-                        compID.getComponentID(),
-                        def.STRING().getText()
-                );
-            }
-
+            return ctx.definition().accept( new DefinitionVisitor());
         }else if(ctx.getStart().getType() == NONWSSTR){ /* Assignment  */
             System.out.println(ctx.getStart().getText());
+
         }else if(ctx.getStart().getType() == LINK){ /* Link  */
             System.out.println(ctx.getStart().getText());
         }else{ /* If Statement  */
-            System.out.println(ctx.getStart().getText());
-            IfStatementVisitor vis = new IfStatementVisitor();
-            IfStatement ifStmt = ctx.accept(vis);
+            return ctx.accept(new IfStatementVisitor());
         }
+
         return null;
     }
 

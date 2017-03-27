@@ -5,10 +5,15 @@ public class IfStatementVisitor extends Loom2BaseVisitor<IfStatement> {
 
     @Override
     public IfStatement visitIf_statement(Loom2Parser.If_statementContext ctx) {
-        ReferenceVisitor vis = new ReferenceVisitor();
-        Reference ref = ctx.reference().accept(vis);
+        Reference ref = ctx.reference().accept(new ReferenceVisitor());
 
-        return visitChildren(ctx);
+        Definition def = ctx.definition().accept(new DefinitionVisitor());
+        String definitionType = def.getStatementType();
+
+        if(!definitionType.equals(Text.TEXT) && !definitionType.equals(Option.OPTION))
+            return new IfStatement("Invalid statement in If: " + ctx.definition().getStart().getLine());
+
+        return new IfStatement(ref, def);
     }
 
 }

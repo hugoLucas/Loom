@@ -21,4 +21,13 @@ public class Reference {
 
         this.referenceOption = referenceOption;
     }
+
+    public String getReferenceSource(){
+        if(referencePageComponentID != null)
+            return this.referencePageComponentID;
+        else if(referencPageIdentifier != null)
+            return this.referencPageIdentifier;
+        else
+            return null;
+    }
 }

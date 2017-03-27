@@ -29,6 +29,7 @@ public class SectionVisitor extends Loom2BaseVisitor<Section> {
         String sectionName = ctx.getParent().getStart().getText();
 
         if(sectionName.equals("PAGE")){
+            System.out.print("Constructing page... ");
             return constructPageSection(stmts, ctx);
         }
 
@@ -39,7 +40,7 @@ public class SectionVisitor extends Loom2BaseVisitor<Section> {
         String sectionName = ctx.getParent().getStart().getText();
 
         if(sectionName.equals("PAGE"))
-            if( stmt instanceof  Title || stmt instanceof Text || stmt instanceof Option)
+            if( stmt instanceof  Title || stmt instanceof Text || stmt instanceof Option || stmt instanceof IfStatement)
                 return true;
 
         return false;
@@ -72,6 +73,7 @@ public class SectionVisitor extends Loom2BaseVisitor<Section> {
             }
         }
 
+        System.out.println("Done!");
         return pg;
     }
 }

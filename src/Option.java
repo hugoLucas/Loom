@@ -1,24 +1,23 @@
 /**
  * Created by hugoj on 3/25/2017.
  */
-public class Option extends Statement {
-    private String optionIdentifier;
-    private String optionText;
+public class Option extends Definition {
 
     public static String OPTION = "OPTION";
 
     public Option(String optionIdentifier, String optionText){
         super();
-        this.optionIdentifier = optionIdentifier;
-        this.optionText = optionText;
+        this.setDefinitionKeyIndent(OPTION);
+        this.setDefinitionSourceComponentId(optionIdentifier);
+        this.setDefinitionString(optionText);
     }
 
     public String getOptionIdentifier() {
-        return optionIdentifier;
+        return this.getDefinitionSourceComponentId();
     }
 
     public String getOptionText() {
-        return optionText;
+        return this.getDefinitionString();
     }
 
     @Override

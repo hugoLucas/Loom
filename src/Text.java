@@ -1,18 +1,18 @@
 /**
  * Created by hugoj on 3/25/2017.
  */
-public class Text extends Statement {
+public class Text extends Definition {
 
-    private String textString;
     public static String TEXT = "TEXT";
 
     public Text(String textString){
         super();
-        this.textString = textString;
+        this.setDefinitionKeyIndent(TEXT);
+        this.setDefinitionString(textString);
     }
 
     public String getTextString(){
-        return this.textString;
+        return this.getDefinitionString();
     }
 
     @Override
