@@ -1,13 +1,11 @@
-import java.util.InputMismatchException;
-
 /**
- * Created by hugoj on 3/27/2017.
+ * Created by hugoj on 3/29/2017.
  */
-public class Pg extends Definition {
+public class Chapt extends Definition {
 
-    public static String PG = "PG";
+    public static String CHAPT = "CHAPT";
 
-    public Pg (String var, boolean beginningPage, boolean endPage){
+    public Chapt(String var, boolean beginningPage, boolean endPage){
         super();
         if(beginningPage)
             this.setDefinitionTimeIndent("START");
@@ -17,7 +15,7 @@ public class Pg extends Definition {
         this.setDefinitionTargetNONWSSTR(var);
     }
 
-    public Pg (ComponentID compId, boolean beginningPage, boolean endPage){
+    public Chapt(ComponentID compId, boolean beginningPage, boolean endPage){
         super();
         if(beginningPage)
             this.setDefinitionTimeIndent("START");
@@ -27,7 +25,19 @@ public class Pg extends Definition {
         this.setDefinitionTargetComponentId(compId.getComponentID());
     }
 
-    public String returnPgTarget(){
+    public boolean endChapter(){
+        if(this.getDefinitionTimeIndent().equals("START"))
+            return false;
+        return true;
+    }
+
+    public boolean startChapter(){
+        if(this.getDefinitionTimeIndent().equals("END"))
+            return false;
+        return true;
+    }
+
+    public String returnChaptTarget(){
         if(this.getDefinitionTargetComponentId() != null)
             return this.getDefinitionTargetComponentId();
         else
@@ -35,7 +45,7 @@ public class Pg extends Definition {
     }
 
     @Override
-    public String getStatementType() {
-        return PG;
+    String getStatementType() {
+        return CHAPT;
     }
 }

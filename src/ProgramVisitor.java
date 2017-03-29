@@ -6,9 +6,9 @@ public class ProgramVisitor extends Loom2BaseVisitor<Program> {
     @Override
     public Program visitProgram(Loom2Parser.ProgramContext ctx) {
 
-        SectionVisitor sectVisitor = new SectionVisitor();
+        ProgramSectionVisitor sectVisitor = new ProgramSectionVisitor();
         for(Loom2Parser.SectionsContext secCtx: ctx.sections()){
-            Section sec = secCtx.accept(sectVisitor);
+            ProgramSection sec = secCtx.accept(sectVisitor);
 
             if(sec.wasThereAnError())
                 return new Program(sec.returnErrorMessage());

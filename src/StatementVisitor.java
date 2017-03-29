@@ -21,7 +21,6 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
         }else if(ctx.getStart().getType() == NONWSSTR){ /* Assignment  */
             return ctx.assignment().accept(new AssignmentVisitor());
         }else if(ctx.getStart().getType() == LINK){ /* Link  */
-            System.out.println(ctx.getText());
             return ctx.link().accept(new LinkVisitor());
         }else{ /* If Statement  */
             return ctx.accept(new IfStatementVisitor());

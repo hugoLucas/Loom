@@ -54,14 +54,14 @@ CHAPTER{
     three:$pg_three
     four:$pg_four
 
-   PG[START]:one
+    PG[START]:one
     PG:two
     PG:three
     PG[END]:four
 
     LINK[one.$a][two]
-    LINK[one.$b][three]
-    LINK[two.$c][four]
+    LINK[two.$a][three]
+    LINK[three.$c][four]
     LINK[three.$d][four]
 }
 

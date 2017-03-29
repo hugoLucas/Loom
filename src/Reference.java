@@ -4,7 +4,7 @@
 public class Reference {
 
     private String referencePageComponentID;
-    private String referencPageIdentifier;
+    private String referencePageIdentifier;
     private String referenceOption;
 
     private boolean usingComponentID;
@@ -13,10 +13,10 @@ public class Reference {
     public Reference(String reference, String referenceOption, boolean usingComponentID){
         if(usingComponentID) {
             this.referencePageComponentID = reference;
-            this.referencPageIdentifier = null;
+            this.referencePageIdentifier = null;
         }else{
             this.referencePageComponentID = null;
-            this.referencPageIdentifier = reference;
+            this.referencePageIdentifier = reference;
         }
 
         this.referenceOption = referenceOption;
@@ -25,9 +25,21 @@ public class Reference {
     public String getReferenceSource(){
         if(referencePageComponentID != null)
             return this.referencePageComponentID;
-        else if(referencPageIdentifier != null)
-            return this.referencPageIdentifier;
+        else if(referencePageIdentifier != null)
+            return this.referencePageIdentifier;
         else
             return null;
+    }
+
+    public String getReferenceOption(){
+        return this.referenceOption;
+    }
+
+    public boolean equalTo(Reference ref){
+        if(this.getReferenceSource().equals(ref.getReferenceSource()))
+            if(this.getReferenceOption().equals(ref.getReferenceOption()))
+                return true;
+
+        return false;
     }
 }

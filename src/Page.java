@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.StringJoiner;
 
 /**
  * Created by Hugo on 3/23/2017.
  */
-public class Page extends Section{
+public class Page extends ProgramSection {
 
     private String pageTitle;
     private String pageIdentifier;
@@ -12,7 +11,7 @@ public class Page extends Section{
 
     private ArrayList<String> optionText;
     private ArrayList<String> optionIdentifier;
-    private boolean duplicateIdentifers;
+    private boolean duplicateIdentifiers;
 
     public Page(){
         super();
@@ -22,7 +21,7 @@ public class Page extends Section{
 
         this.optionText = new ArrayList<>();
         this.optionIdentifier = new ArrayList<>();
-        this.duplicateIdentifers = false;
+        this.duplicateIdentifiers = false;
     }
 
     public String getPageTitle() {
@@ -55,11 +54,11 @@ public class Page extends Section{
         if(!this.optionIdentifier.contains(optionIdentifier))
             this.optionIdentifier.add(optionIdentifier);
         else
-            this.duplicateIdentifers = true;
+            this.duplicateIdentifiers = true;
     }
 
-    public boolean hasDuplicateIdentifers(){
-        return this.duplicateIdentifers;
+    public boolean hasDuplicateIdentifiers(){
+        return this.duplicateIdentifiers;
     }
 
     public boolean checkCompleteness(){

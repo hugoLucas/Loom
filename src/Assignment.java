@@ -15,6 +15,18 @@ public class Assignment extends Statement {
         this.assignmentLineNumber = line;
     }
 
+    public String getAssignmentVariable(){
+        return this.assignmentVariable;
+    }
+
+    public String getAssignmentComponentIdString(){
+        return this.assignmentComponentId.getComponentID();
+    }
+
+    public int getAssignmentLineNumber(){
+        return this.assignmentLineNumber;
+    }
+
     @Override
     public String getStatementType() {
         return ASS;
