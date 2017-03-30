@@ -30,20 +30,36 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
         String sectionName = ctx.getStart().getText();
 
         if(sectionName.equals("PAGE")){
-            System.out.print("Constructing page... ");
             return constructPageSection(stmts, ctx);
         }else if(sectionName.equals("CHAPTER")){
-            System.out.print("Constructing chapter... ");
             return constructChapterSection(stmts, ctx);
         }else if(sectionName.equals("SECTION")){
-            System.out.print("Constructing section... ");
             return constructSectionSection(stmts, ctx);
         }else{
-            System.out.println("Constructing story... ");
+            return constructSectionStory(stmts, ctx);
+        }
+    }
 
+    private ProgramSection constructSectionStory(List<Statement> stmts, Loom2Parser.SectionsContext ctx) {
+        Story story = new Story();
+
+        for(Statement stmt: stmts){
+            String stmtType = stmt.getStatementType();
+
+            if(stmtType.equals(Title.TITLE)){
+                Title title = (Title) stmt;
+                if(story.getSectionTitle() == null)
+                    story.addStoryTitle(title.getTitleContent());
+                else
+                    return new ProgramSectionError("DuplicateTitleException: " + ctx.getStart().getLine());
+            }else if(stmtType.equals(Sec.SEC)){
+                Sec section = (Sec) stmt;
+                if(!story.addStorySection(section))
+                    return new ProgramSectionError("DuplicateSectionException: " + ctx.getStart().getLine());
+            }
         }
 
-        return null;
+        return story;
     }
 
     private ProgramSection constructSectionSection(List<Statement> stmts, Loom2Parser.SectionsContext ctx) {
@@ -70,12 +86,13 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
             }else if(stmtType.equals(Link.LINK)){
                 Link link = (Link) stmt;
                 if(sec.definesAsPageOrVariable(link.getLinkChapterSource()) &&
-                        sec.definesAsPageOrVariable(link.getLinkChapterTarget()))
-                    sec.addLink(link);
+                        sec.definesAsPageOrVariable(link.getLinkChapterTarget())) {
+                    if (!sec.addLink(link))
+                        return new ProgramSectionError("RedundantLinkException: " + ctx.getStart().getLine());
+                } else
+                        return new ProgramSectionError("UndefinedTargetException: " + ctx.getStart().getLine());
             }
         }
-
-        System.out.println("Done!");
         return sec;
     }
 
@@ -95,11 +112,19 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
             } else if(stmtType.equals(Assignment.ASS)){
                 Assignment assign = (Assignment) stmt;
                 if(!ch.addVariableAssignment(assign.getAssignmentVariable(), assign.getAssignmentComponentIdString()))
-                    return new ProgramSectionError("DuplicateAssignmentException: " + assign.getAssignmentLineNumber());
+                    return new ProgramSectionError("DuplicateComponentIDException: " + assign.getAssignmentLineNumber());
             } else if(stmtType.equals(Pg.PG)){
                 Pg page = (Pg) stmt;
-                if(!ch.addPage(page.returnPgTarget()))
-                    return new ProgramSectionError("DuplicatePageAssignmentException: " + ctx.getStart().getLine());
+                switch (ch.addPage(page.returnPgTarget())) {
+                    case 0:
+                        break;
+                    case -1:
+                        return new ProgramSectionError("DuplicatePageException: " + page.getPgLineNumber());
+                    case -2:
+                        return new ProgramSectionError("DuplicateIdentifierException: " + page.getPgLineNumber());
+                    case -3:
+                        return new ProgramSectionError("RedundantAssignmentException: " + page.getPgLineNumber());
+                }
             } else if(stmtType.equals(Link.LINK)){
                 Link link = (Link) stmt;
                 String referenceSource = link.getLinkReference().getReferenceSource();
@@ -125,9 +150,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                     return new ProgramSectionError("SOMETHING WENT WRONG !!!!");
             }
         }
-        if(ch.isComplete()) {
-            System.out.println("Done!");
-            return ch;
+        if(ch.isComplete()) {return ch;
         }
         else
             return new ProgramSectionError("IncompleteChapterException: " + ctx.getStart().getLine());
@@ -143,7 +166,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                 Title title = (Title) stmt;
                 if(pg.getPageTitle() == null) {
                     pg.setPageTitle(title.getTitleContent());
-                    pg.setPageIdentifer(title.getTitleIdentifier());
+                    pg.setPageIdentifier(title.getTitleIdentifier());
                 }
                 else
                     return new ProgramSectionError("DuplicateTitleException: " + ctx.getStart().getLine());
@@ -157,13 +180,12 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                 Option option = (Option) stmt;
                 pg.addPageOptions(option.getOptionText(), option.getOptionIdentifier());
                 if(pg.hasDuplicateIdentifiers())
-                    return new ProgramSectionError("DuplicateIdentifierException: " + ctx.getStart().getLine());
+                    return new ProgramSectionError("DuplicateIdentifierException: " + option.getOptionLineNumber());
             } else if(stmtType.equals(IfStatement.IFSTMT)){
                 /* Need something in here! */
             }
         }
 
-        System.out.println("Done!");
         return pg;
     }
 
@@ -180,6 +202,10 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
 
         if(sectionName.equals("SECTION"))
             if (stmt instanceof Title || stmt instanceof Assignment || stmt instanceof Chapt || stmt instanceof Link)
+                return true;
+
+        if(sectionName.equals("STORY"))
+            if(stmt instanceof  Title || stmt instanceof Sec)
                 return true;
 
         return false;

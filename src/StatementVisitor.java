@@ -14,7 +14,7 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
         if(ctx.getStart().getType() == TITLE){ /* Title */
             Title stmt = ctx.title().accept(new TitleVisitor());
             if(!titleInStory(ctx) && !stmt.hasIdentifier())
-                return new Title("TITLE W/O IDENTIFIER: " + ctx.getStart().getLine());
+                return new Title("MissingSectionIdentifierException: " + stmt.getTitleLineNumber());
             return stmt;
         }else if(ctx.getStart().getType() == KEY_INDENT){ /* Definition */
             return ctx.definition().accept( new DefinitionVisitor());

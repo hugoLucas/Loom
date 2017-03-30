@@ -7,7 +7,7 @@ public class Pg extends Definition {
 
     public static String PG = "PG";
 
-    public Pg (String var, boolean beginningPage, boolean endPage){
+    public Pg (String var, boolean beginningPage, boolean endPage, int lineNumber){
         super();
         if(beginningPage)
             this.setDefinitionTimeIndent("START");
@@ -15,9 +15,10 @@ public class Pg extends Definition {
             this.setDefinitionTimeIndent("END");
 
         this.setDefinitionTargetNONWSSTR(var);
+        this.setDefinitionLineNumber(lineNumber);
     }
 
-    public Pg (ComponentID compId, boolean beginningPage, boolean endPage){
+    public Pg (ComponentID compId, boolean beginningPage, boolean endPage, int lineNumber){
         super();
         if(beginningPage)
             this.setDefinitionTimeIndent("START");
@@ -25,6 +26,7 @@ public class Pg extends Definition {
             this.setDefinitionTimeIndent("END");
 
         this.setDefinitionTargetComponentId(compId.getComponentID());
+        this.setDefinitionLineNumber(lineNumber);
     }
 
     public String returnPgTarget(){
@@ -32,6 +34,10 @@ public class Pg extends Definition {
             return this.getDefinitionTargetComponentId();
         else
             return this.getDefinitionTargetNONWSSTR();
+    }
+
+    public int getPgLineNumber(){
+        return this.getDefinitionLineNumber();
     }
 
     @Override

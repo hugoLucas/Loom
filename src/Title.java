@@ -5,12 +5,14 @@ public class Title extends Statement{
 
     private String titleContents;
     private String titleIdentifier;
+    private int titleLineNumber;
     public static String TITLE = "TITLE";
 
-    public Title(String titleContents, String titleIdentifier){
+    public Title(String titleContents, String titleIdentifier, int titleLineNumber){
         super();
         this.titleContents = titleContents;
         this.titleIdentifier = titleIdentifier;
+        this.titleLineNumber = titleLineNumber;
     }
 
     public Title(String message){
@@ -26,6 +28,8 @@ public class Title extends Statement{
     public String getTitleIdentifier(){
         return this.titleIdentifier;
     }
+
+    public int getTitleLineNumber(){ return this.titleLineNumber; }
 
     public boolean hasIdentifier(){
         return this.titleIdentifier != null;

@@ -1,5 +1,3 @@
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -81,7 +79,7 @@ public class SyntaxAnalyzer extends Loom2BaseListener {
             String pageIdentifer = ctx.getChild(4).getText();
 
             this.currentPage.setPageTitle(pageTitle.substring(1, pageTitle.length() - 1));
-            this.currentPage.setPageIdentifer(pageIdentifer);
+            this.currentPage.setPageIdentifier(pageIdentifer);
 
             if(this.pageTable.containsKey(pageIdentifer))
                 sop("Identifier in use!");

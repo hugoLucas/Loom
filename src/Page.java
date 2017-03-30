@@ -32,12 +32,12 @@ public class Page extends ProgramSection {
         this.pageTitle = pageTitle;
     }
 
-    public String getPageIdentifer() {
+    public String getPageIdentifier() {
         return pageIdentifier;
     }
 
-    public void setPageIdentifer(String pageIdentifer) {
-        this.pageIdentifier = pageIdentifer;
+    public void setPageIdentifier(String pageIdentifier) {
+        this.pageIdentifier = pageIdentifier;
     }
 
     public String getPageText() {
@@ -51,7 +51,7 @@ public class Page extends ProgramSection {
     public void addPageOptions(String optionText, String optionIdentifier) {
         this.optionText.add(optionText);
 
-        if(!this.optionIdentifier.contains(optionIdentifier))
+        if(!this.optionIdentifier.contains(optionIdentifier) && !this.pageIdentifier.equals(optionIdentifier))
             this.optionIdentifier.add(optionIdentifier);
         else
             this.duplicateIdentifiers = true;
@@ -64,7 +64,7 @@ public class Page extends ProgramSection {
     public boolean checkCompleteness(){
         boolean a = this.getPageText() != null;
         boolean b = this.getPageTitle() != null;
-        boolean c = this.getPageIdentifer() != null;
+        boolean c = this.getPageIdentifier() != null;
 
         return (a && b && c);
     }

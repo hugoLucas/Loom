@@ -1,0 +1,17 @@
+Open Errors
++ All sections are complete (sectional)
++ All component ids must be unique in a program (global)
++ The conditional reference in an If Statement must exist (global)
++ If Statement can only change a TEXT or OPTION of page (sectional)
++ Assignments must refer to valid component ids (global)
++ Pg assignments must refer to existing PAGEs (global)
++ Pg assignments must be unique (sectional)
++ Link references must exist (global)
++ CHPT assignments must refer to existing CHAPTERs (global)
++ CHPT assignments must be unique (sectional)
++ SEC assignments must refer to existing SECTIONs (global)
++ SEC assignments must be unique (sectional)
+
+Closed Errors
++ Title missing an identifier (excluding STORY section)
++ All component ids must be unique in a section (sectional)

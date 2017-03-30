@@ -5,13 +5,13 @@ public abstract class Definition extends Statement {
 
     private String definitionKeyIndent;
 
-    private boolean hasTimeIdent;
+    private boolean hasTimeIDENT;
     private String definitionTimeIndent;
 
-    private boolean hasSoureCoponentId;
+    private boolean hasSourceComponentId;
     private String definitionSourceComponentId;
 
-    private boolean hasTargetCoponentId;
+    private boolean hasTargetComponentId;
     private String definitionTargetComponentId;
 
     private boolean hasTargetNONWSSTR;
@@ -20,19 +20,20 @@ public abstract class Definition extends Statement {
     private boolean hasTargetString;
     private String definitionTargetString;
 
+    private int lineNumber;
 
     public Definition(){
         super();
 
         this.definitionKeyIndent = null;
 
-        this.hasTimeIdent = false;
+        this.hasTimeIDENT = false;
         definitionTimeIndent = null;
 
-        hasSoureCoponentId = false;
+        hasSourceComponentId = false;
         definitionSourceComponentId = null;
 
-        hasTargetCoponentId = false;
+        hasTargetComponentId = false;
         definitionTargetComponentId = null;
 
         hasTargetNONWSSTR = false;
@@ -55,36 +56,36 @@ public abstract class Definition extends Statement {
     }
 
     public String getDefinitionTimeIndent(){
-        if(this.hasTimeIdent)
+        if(this.hasTimeIDENT)
             return definitionTimeIndent;
         return null;
     }
 
     public void setDefinitionTimeIndent(String str){
         this.definitionTimeIndent = str;
-        this.hasTimeIdent = true;
+        this.hasTimeIDENT = true;
     }
 
     public String getDefinitionSourceComponentId(){
-        if(this.hasSoureCoponentId)
+        if(this.hasSourceComponentId)
             return this.definitionSourceComponentId;
         return null;
     }
 
     public void setDefinitionSourceComponentId(String str){
         this.definitionSourceComponentId = str;
-        this.hasSoureCoponentId = true;
+        this.hasSourceComponentId = true;
     }
 
     public String getDefinitionTargetComponentId(){
-        if(this.hasTargetCoponentId)
+        if(this.hasTargetComponentId)
             return this.definitionTargetComponentId;
         return null;
     }
 
     public void setDefinitionTargetComponentId(String str){
         this.definitionTargetComponentId = str;
-        this.hasTargetCoponentId = true;
+        this.hasTargetComponentId = true;
     }
 
     public String getDefinitionTargetNONWSSTR(){
@@ -107,5 +108,13 @@ public abstract class Definition extends Statement {
     public void setDefinitionString(String str){
         this.definitionTargetString = str;
         this.hasTargetString = true;
+    }
+
+    public void setDefinitionLineNumber(int lineNumber){
+        this.lineNumber = lineNumber;
+    }
+
+    public int getDefinitionLineNumber(){
+        return this.lineNumber;
     }
 }

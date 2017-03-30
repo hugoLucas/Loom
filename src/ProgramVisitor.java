@@ -14,6 +14,6 @@ public class ProgramVisitor extends Loom2BaseVisitor<Program> {
                 return new Program(sec.returnErrorMessage());
         }
 
-        return null;
+        return new Program();
     }
 }

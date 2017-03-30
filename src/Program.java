@@ -1,19 +1,17 @@
 /**
  * Created by hugoj on 3/24/2017.
  */
-public class Program {
+public class Program extends ErrorObject{
 
-    private ErrorObject errorHandler;
-
-    public Program(String message){
-        this.errorHandler = new ErrorObject(message, true);
+    public Program(String errorMessage){
+        super(errorMessage, true);
     }
 
-    public boolean wasThereAnError(){
-        return this.errorHandler.wasThereAnError();
+    public Program(){
+        super();
     }
 
     public String returnErrorMessage(){
-        return this.errorHandler.getErrorMessage();
+        return this.getErrorMessage();
     }
 }

@@ -23,7 +23,8 @@ public class Section extends ProgramSection {
     }
 
     public boolean addVariableAssignment(String variableName, String componentId){
-        if(this.sectionIdentifierToComponentIdMap.containsKey(variableName))
+        if(this.sectionIdentifierToComponentIdMap.containsKey(variableName) || this.sectionIdentifier.equals(componentId)
+                || this.sectionIdentifierToComponentIdMap.values().contains(componentId))
             return false;
         else {
             this.sectionIdentifierToComponentIdMap.put(variableName, componentId);
@@ -54,7 +55,7 @@ public class Section extends ProgramSection {
 
     public boolean addChapterToSection(String chapterName, boolean start, boolean end){
         if(start)
-            if(this.sectionStartChapter == null )
+            if(this.sectionStartChapter == null)
                 this.sectionStartChapter = chapterName;
             else
                 return false;
@@ -63,7 +64,8 @@ public class Section extends ProgramSection {
                 this.sectionEndChapter = chapterName;
             else
                 return false;
-        else if(this.sectionStartChapter != null && this.sectionStartChapter != null)
+
+        if(this.sectionStartChapter != null && this.sectionStartChapter != null)
             if(this.sectionStartChapter.equals(this.sectionEndChapter))
                 return false;
         else
@@ -105,8 +107,12 @@ public class Section extends ProgramSection {
         return true;
     }
 
-    public void addLink(Link l){
-        this.sectionLinks.add(l);
+    public boolean addLink(Link l){
+        if(! l.getLinkChapterSource().equals(l.getLinkChapterTarget())) {
+            this.sectionLinks.add(l);
+            return true;
+        }
+        return false;
     }
 
     public String keyFromValue(String value){

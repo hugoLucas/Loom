@@ -5,11 +5,12 @@ public class Option extends Definition {
 
     public static String OPTION = "OPTION";
 
-    public Option(String optionIdentifier, String optionText){
+    public Option(String optionIdentifier, String optionText, int optionLineNumber){
         super();
         this.setDefinitionKeyIndent(OPTION);
         this.setDefinitionSourceComponentId(optionIdentifier);
         this.setDefinitionString(optionText);
+        this.setDefinitionLineNumber(optionLineNumber);
     }
 
     public String getOptionIdentifier() {
@@ -18,6 +19,10 @@ public class Option extends Definition {
 
     public String getOptionText() {
         return this.getDefinitionString();
+    }
+
+    public int getOptionLineNumber(){
+        return this.getDefinitionLineNumber();
     }
 
     @Override

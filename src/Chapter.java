@@ -39,7 +39,7 @@ public class Chapter extends ProgramSection {
     }
 
     public boolean addVariableAssignment(String variableName, String componentId){
-        if(this.chapterIdentifierToComponentIdMap.containsKey(variableName))
+        if(this.chapterIdentifierToComponentIdMap.containsKey(variableName) || this.chapterComponentId.equals(componentId))
             return false;
         else {
             this.chapterIdentifierToComponentIdMap.put(variableName, componentId);
@@ -47,13 +47,18 @@ public class Chapter extends ProgramSection {
         }
     }
 
-    public boolean addPage(String pg){
-        for(String p: this.chapterPagesNames){
+    public int addPage(String pg){
+        for(String p: this.chapterPagesNames)
             if(p.equals(pg))
-                return false;
-        }
+                return -1;
+
+        if(pg.equals(this.chapterComponentId))
+            return -2;
+        else if(chapterIdentifierToComponentIdMap.values().contains(pg))
+            return -3;
+
         this.chapterPagesNames.add(pg);
-        return true;
+        return 0;
     }
 
     public boolean addLink(Link link){

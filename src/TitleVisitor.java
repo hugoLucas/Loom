@@ -16,6 +16,7 @@ public class TitleVisitor extends Loom2BaseVisitor<Title> {
             titleComponentID = null;
         }
 
-        return new Title(titleContents.substring(1, titleContents.length() - 1), titleComponentID);
+        return new Title(titleContents.substring(1, titleContents.length() - 1),
+                titleComponentID, ctx.getStart().getLine());
     }
 }
