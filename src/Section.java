@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 /**
  * Created by hugoj on 3/29/2017.
@@ -120,5 +121,45 @@ public class Section extends ProgramSection {
             if(value.equals(this.sectionIdentifierToComponentIdMap.get(key)))
                 return key;
         return null;
+    }
+
+    public boolean isComplete(){
+        boolean hasTitleAndIdentifier = this.sectionTitle != null && this.sectionIdentifier != null;
+        boolean hasEndAndStart = this.sectionStartChapter != null && this.sectionEndChapter != null;
+        boolean hasChapters = this.sectionChapterNames.size() > 0;
+        boolean hasLinks = this.sectionLinks != null;
+
+        return hasTitleAndIdentifier && hasEndAndStart && hasChapters && hasLinks;
+    }
+
+    @Override
+    public ArrayList<String> getAllIdentifiers() {
+        ArrayList<String> identifierList = new ArrayList<>(1);
+        identifierList.add(this.sectionIdentifier);
+        return identifierList;
+    }
+
+    @Override
+    public ArrayList<String> getAllVariableAssignments() {
+        ArrayList<String> list = new ArrayList<>();
+        list.addAll(this.sectionIdentifierToComponentIdMap.values());
+        return list;
+    }
+
+    @Override
+    public ArrayList<String> getAllSectionalReferences() {
+        ArrayList<String> list = this.sectionChapterNames.stream()
+                .filter(s -> s.startsWith("$"))
+                .collect(Collectors.toCollection(ArrayList::new));
+        if(sectionEndChapter.startsWith("$"))
+            list.add(sectionEndChapter);
+        if(sectionStartChapter.startsWith("$"))
+            list.add(sectionStartChapter);
+        return list;
+    }
+
+    @Override
+    public String toString(){
+        return "Section";
     }
 }

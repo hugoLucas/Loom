@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 /**
  * Created by hugoj on 3/28/2017.
@@ -11,7 +12,8 @@ public class Chapter extends ProgramSection {
 
     private HashMap<String, String> chapterIdentifierToComponentIdMap;
     private ArrayList<String> chapterPagesNames;
-
+    private String chapterStartPage;
+    private String chapterEndPage;
 
     private ArrayList<Link> chapterLinks;
 
@@ -47,7 +49,9 @@ public class Chapter extends ProgramSection {
         }
     }
 
-    public int addPage(String pg){
+    public int addPage(Pg page){
+        String pg = page.returnPgTarget();
+
         for(String p: this.chapterPagesNames)
             if(p.equals(pg))
                 return -1;
@@ -56,6 +60,36 @@ public class Chapter extends ProgramSection {
             return -2;
         else if(chapterIdentifierToComponentIdMap.values().contains(pg))
             return -3;
+
+        String timeIdent = page.returnPgTimeIdent();
+        if(timeIdent != null) {
+            if (timeIdent.equals("START"))
+                if (this.chapterStartPage == null) {
+                    this.chapterStartPage = pg;
+                    return 0;
+                }
+                else
+                    return -4;
+            if (timeIdent.equals("END"))
+                if (this.chapterEndPage == null) {
+                    this.chapterEndPage = pg;
+                    return 0;
+                }
+                else
+                    return -4;
+        }
+
+        if(this.chapterStartPage != null){
+            if(this.chapterStartPage.equals(pg))
+                return -1;
+            if(this.chapterEndPage != null ){
+                if(this.chapterEndPage.equals(pg))
+                    return -1;
+                if(chapterStartPage.equals(chapterEndPage))
+                    return -4;
+            }
+        }
+
 
         this.chapterPagesNames.add(pg);
         return 0;
@@ -88,7 +122,8 @@ public class Chapter extends ProgramSection {
     }
 
     public boolean inDefinedAsPage(String name){
-        return this.chapterPagesNames.contains(name);
+        return this.chapterPagesNames.contains(name) || this.chapterEndPage.equals(name) ||
+                this.chapterStartPage.equals(name);
     }
 
     public boolean isValidVariableName(String name){
@@ -99,10 +134,10 @@ public class Chapter extends ProgramSection {
     public boolean isComplete(){
         boolean hasName = this.chapterTitle != null;
         boolean hasId = this.chapterComponentId != null;
-        boolean hasPages = this.chapterPagesNames.size() != 0;
         boolean hasLinks = this.chapterLinks.size() != 0;
+        boolean hasStartAndEnd = this.chapterStartPage != null && this.chapterEndPage != null;
 
-        return hasName && hasId && hasPages && hasLinks;
+        return hasName && hasId && hasLinks && hasStartAndEnd;
     }
 
     public String getKeyFromValue(String value){
@@ -110,5 +145,37 @@ public class Chapter extends ProgramSection {
             if(this.chapterIdentifierToComponentIdMap.get(key).equals(value))
                 return key;
         return null;
+    }
+
+    @Override
+    public ArrayList<String> getAllIdentifiers() {
+        ArrayList<String> identifierList = new ArrayList<>(1);
+        identifierList.add(this.chapterComponentId);
+        return identifierList;
+    }
+
+    @Override
+    public ArrayList<String> getAllVariableAssignments() {
+        ArrayList<String> list = new ArrayList<>();
+        list.addAll(this.chapterIdentifierToComponentIdMap.values());
+        return list;
+    }
+
+    @Override
+    public ArrayList<String> getAllSectionalReferences() {
+        ArrayList<String> list = this.chapterPagesNames.stream()
+                .filter(s -> s.startsWith("$"))
+                .collect(Collectors.toCollection(ArrayList::new));
+        if(this.chapterStartPage.startsWith("$"))
+            list.add(this.chapterStartPage);
+        if(this.chapterEndPage.startsWith("$"))
+            list.add(this.chapterEndPage);
+
+        return list;
+    }
+
+    @Override
+    public String toString(){
+        return "Chapter";
     }
 }

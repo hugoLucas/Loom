@@ -25,6 +25,9 @@ public class DefinitionVisitor extends Loom2BaseVisitor<Definition> {
 
     private Definition constructPageOrChapter(Loom2Parser.DefinitionContext ctx, boolean [] timeIndents, int flag, int lineNumber){
 
+        if(timeIndents == null)
+            return new Pg("InvalidTimeIdentifierException: " + ctx.getStart().getLine());
+
         if(flag == 0){
             if(ctx.NONWSSTR() != null)
                 return new Pg(ctx.NONWSSTR().getText(), timeIndents[0], timeIndents[1], lineNumber);

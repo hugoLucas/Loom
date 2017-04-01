@@ -48,7 +48,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
 
             if(stmtType.equals(Title.TITLE)){
                 Title title = (Title) stmt;
-                if(story.getSectionTitle() == null)
+                if(story.getStoryTitle() == null)
                     story.addStoryTitle(title.getTitleContent());
                 else
                     return new ProgramSectionError("DuplicateTitleException: " + ctx.getStart().getLine());
@@ -59,7 +59,10 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
             }
         }
 
-        return story;
+        if(story.isComplete())
+            return story;
+        else
+            return new ProgramSectionError("IncompleteStoryException: " + ctx.getStart().getLine());
     }
 
     private ProgramSection constructSectionSection(List<Statement> stmts, Loom2Parser.SectionsContext ctx) {
@@ -82,7 +85,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
             }else if(stmtType.equals(Chapt.CHAPT)){
                 Chapt chapt = (Chapt) stmt;
                 if(!sec.addChapterToSection(chapt.returnChaptTarget(), chapt.startChapter(), chapt.endChapter()))
-                    return new ProgramSectionError("DuplicateChapterAssignmentException: " + ctx.getStart().getLine());
+                    return new ProgramSectionError("RedundantChapterAssignmentException: " + ctx.getStart().getLine());
             }else if(stmtType.equals(Link.LINK)){
                 Link link = (Link) stmt;
                 if(sec.definesAsPageOrVariable(link.getLinkChapterSource()) &&
@@ -93,7 +96,11 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                         return new ProgramSectionError("UndefinedTargetException: " + ctx.getStart().getLine());
             }
         }
-        return sec;
+
+        if(sec.isComplete())
+            return sec;
+        else
+            return new ProgramSectionError("IncompleteSectionException: " + ctx.getStart().getLine());
     }
 
     private ProgramSection constructChapterSection(List<Statement> stmts, Loom2Parser.SectionsContext ctx) {
@@ -115,7 +122,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                     return new ProgramSectionError("DuplicateComponentIDException: " + assign.getAssignmentLineNumber());
             } else if(stmtType.equals(Pg.PG)){
                 Pg page = (Pg) stmt;
-                switch (ch.addPage(page.returnPgTarget())) {
+                switch (ch.addPage(page)) {
                     case 0:
                         break;
                     case -1:
@@ -124,6 +131,8 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                         return new ProgramSectionError("DuplicateIdentifierException: " + page.getPgLineNumber());
                     case -3:
                         return new ProgramSectionError("RedundantAssignmentException: " + page.getPgLineNumber());
+                    case -4:
+                        return new ProgramSectionError("InvalidTimeIdentifierException: " + page.getPgLineNumber());
                 }
             } else if(stmtType.equals(Link.LINK)){
                 Link link = (Link) stmt;
@@ -150,8 +159,8 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                     return new ProgramSectionError("SOMETHING WENT WRONG !!!!");
             }
         }
-        if(ch.isComplete()) {return ch;
-        }
+        if(ch.isComplete())
+            return ch;
         else
             return new ProgramSectionError("IncompleteChapterException: " + ctx.getStart().getLine());
     }
@@ -181,12 +190,16 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                 pg.addPageOptions(option.getOptionText(), option.getOptionIdentifier());
                 if(pg.hasDuplicateIdentifiers())
                     return new ProgramSectionError("DuplicateIdentifierException: " + option.getOptionLineNumber());
-            } else if(stmtType.equals(IfStatement.IFSTMT)){
-                /* Need something in here! */
+            } else if(stmtType.equals(IfStatement.IFSTMT)) {
+                IfStatement ifStmt = (IfStatement) stmt;
+                if(!pg.addIfStatement(ifStmt))
+                    return new ProgramSectionError("DuplicateIfStatementException: " + ifStmt.getLineNumber());
             }
         }
-
-        return pg;
+        if(pg.isComplete())
+            return pg;
+        else
+            return new ProgramSectionError("IncompletePageException: " + ctx.getStart().getLine());
     }
 
     public boolean statementInCorrectSection(Loom2Parser.SectionsContext ctx, Statement stmt){

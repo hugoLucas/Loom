@@ -5,6 +5,7 @@ public class IfStatement extends Statement {
 
     private Reference ifStatementReference;
     private Definition ifStatementDefinition;
+    private int lineNumber;
 
     public static String IFSTMT = "IFSTMT";
 
@@ -12,9 +13,22 @@ public class IfStatement extends Statement {
         super(errorMessage);
     }
 
-    public IfStatement(Reference ref, Definition def){
+    public IfStatement(Reference ref, Definition def, int lineNum){
         this.ifStatementDefinition = def;
         this.ifStatementReference = ref;
+        this.lineNumber = lineNum;
+    }
+
+    public Reference getIfStatementReference(){
+        return this.ifStatementReference;
+    }
+
+    public boolean equals(IfStatement ifStmt){
+        return this.ifStatementReference.equals(ifStmt.getIfStatementReference());
+    }
+
+    public int getLineNumber(){
+        return this.lineNumber;
     }
 
     @Override

@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Created by hugoj on 3/30/2017.
  */
-public class Story extends Section {
+public class Story extends ProgramSection {
 
     private String storyTitle;
     private ArrayList<Sec> storySections;
@@ -50,5 +51,33 @@ public class Story extends Section {
             if(s.equals(storySection))
                 return true;
         return false;
+    }
+
+    public boolean isComplete(){
+        return this.storyHasStart && this.storyTitle != null
+                && this.storySections.size() > 0;
+    }
+
+    @Override
+    public ArrayList<String> getAllIdentifiers() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getAllVariableAssignments() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getAllSectionalReferences() {
+        return this.storySections.stream()
+                .filter(s -> s.getSectionIdAsString() != null)
+                .map(Sec::getSectionIdAsString)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    @Override
+    public String toString(){
+        return "STORY";
     }
 }

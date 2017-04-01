@@ -11,6 +11,9 @@ public class Page extends ProgramSection {
 
     private ArrayList<String> optionText;
     private ArrayList<String> optionIdentifier;
+    private ArrayList<IfStatement> pageIfStatementMap;
+
+    private boolean hasIfStatement;
     private boolean duplicateIdentifiers;
 
     public Page(){
@@ -21,7 +24,9 @@ public class Page extends ProgramSection {
 
         this.optionText = new ArrayList<>();
         this.optionIdentifier = new ArrayList<>();
+        this.pageIfStatementMap = new ArrayList<>();
         this.duplicateIdentifiers = false;
+        this.hasIfStatement = false;
     }
 
     public String getPageTitle() {
@@ -61,11 +66,47 @@ public class Page extends ProgramSection {
         return this.duplicateIdentifiers;
     }
 
-    public boolean checkCompleteness(){
+    public boolean isComplete(){
         boolean a = this.getPageText() != null;
         boolean b = this.getPageTitle() != null;
         boolean c = this.getPageIdentifier() != null;
 
         return (a && b && c);
+    }
+
+    @Override
+    public ArrayList<String> getAllIdentifiers() {
+        ArrayList<String> identifierList = new ArrayList<>(1 + this.optionIdentifier.size());
+        identifierList.add(this.pageIdentifier);
+        identifierList.addAll(this.optionIdentifier);
+        return identifierList;
+    }
+
+    @Override
+    public ArrayList<String> getAllVariableAssignments() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getAllSectionalReferences() {
+        return null;
+    }
+
+    public ArrayList<String> getPageOptions(){
+        return this.optionIdentifier;
+    }
+
+    public boolean addIfStatement(IfStatement ifStmt){
+        for(IfStatement is : this.pageIfStatementMap)
+            if(is.equals(ifStmt))
+                return false;
+
+        this.pageIfStatementMap.add(ifStmt);
+        return true;
+    }
+
+    @Override
+    public String toString(){
+        return "PAGE";
     }
 }

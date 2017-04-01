@@ -29,11 +29,19 @@ public class Pg extends Definition {
         this.setDefinitionLineNumber(lineNumber);
     }
 
+    public Pg(String errorMessage){
+        super(errorMessage);
+    }
+
     public String returnPgTarget(){
         if(this.getDefinitionTargetComponentId() != null)
             return this.getDefinitionTargetComponentId();
         else
             return this.getDefinitionTargetNONWSSTR();
+    }
+
+    public String returnPgTimeIdent(){
+        return this.getDefinitionTimeIndent();
     }
 
     public int getPgLineNumber(){

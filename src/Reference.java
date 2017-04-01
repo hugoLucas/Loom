@@ -31,6 +31,10 @@ public class Reference {
             return null;
     }
 
+    public boolean hasComponentId(){
+        return this.referencePageComponentID != null;
+    }
+
     public String getReferenceOption(){
         return this.referenceOption;
     }
