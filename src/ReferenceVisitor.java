@@ -7,17 +7,18 @@ public class ReferenceVisitor extends Loom2BaseVisitor<Reference>  {
     public Reference visitReference(Loom2Parser.ReferenceContext ctx) {
 
         ComponentIDVisitor vis = new ComponentIDVisitor();
+        int lineNum = ctx.getStart().getLine();
 
         if(ctx.component_id().size() == 2) {
             ComponentID pageId = ctx.component_id(0).accept(vis);
             ComponentID optionId = ctx.component_id(1).accept(vis);
 
-            return new Reference(pageId.getComponentID(), optionId.getComponentID(), true);
+            return new Reference(pageId.getComponentID(), optionId.getComponentID(), true, lineNum);
         }else{
             String variableRef = ctx.NONWSSTR().getText();
             ComponentID optionId = ctx.component_id(0).accept(vis);
 
-            return new Reference(variableRef, optionId.getComponentID(), false);
+            return new Reference(variableRef, optionId.getComponentID(), false, lineNum);
         }
     }
 }

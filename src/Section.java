@@ -1,3 +1,4 @@
+import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -43,6 +44,11 @@ public class Section extends ProgramSection {
 
     public String getSectionIdentifier() {
         return sectionIdentifier;
+    }
+
+    @Override
+    boolean containsComponentIdentifier(String identifier) {
+        return this.sectionIdentifier.equals(identifier);
     }
 
     public void setSectionIdentifier(String sectionIdentifier) {
@@ -156,6 +162,29 @@ public class Section extends ProgramSection {
         if(sectionStartChapter.startsWith("$"))
             list.add(sectionStartChapter);
         return list;
+    }
+
+    @Override
+    public ArrayList<Reference> getAllReferences() {
+        ArrayList<Reference> refList = new ArrayList<>();
+        if(this.sectionLinks.size() > 0 ) {
+            for (Link l : this.sectionLinks) {
+                if (l.getLinkReference() != null) {
+                    if (l.getLinkReference().getReferenceSource().startsWith("$"))
+                        refList.add(l.getLinkReference());
+                    else {
+                        String componentId = this.sectionIdentifierToComponentIdMap.
+                                get(l.getLinkReference().getReferenceSource());
+                        Reference newRef = new Reference(componentId,
+                                l.getLinkReference().getReferenceOption(), true,
+                                l.getLinkReference().getLineNumber());
+                        refList.add(newRef);
+                    }
+                }
+            }
+        }
+
+        return refList;
     }
 
     @Override

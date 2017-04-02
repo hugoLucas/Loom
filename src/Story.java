@@ -23,8 +23,13 @@ public class Story extends ProgramSection {
         this.storyTitle = newTitle;
     }
 
-    public String getStoryTitle(){
+    public String getSectionIdentifier(){
         return this.storyTitle;
+    }
+
+    @Override
+    boolean containsComponentIdentifier(String identifier) {
+        return false;
     }
 
     public boolean addStorySection(Sec storySection){
@@ -75,6 +80,9 @@ public class Story extends ProgramSection {
                 .map(Sec::getSectionIdAsString)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+
+    @Override
+    public ArrayList<Reference> getAllReferences() { return null; }
 
     @Override
     public String toString(){

@@ -19,6 +19,10 @@ public class ProgramVisitor extends Loom2BaseVisitor<Program> {
             }
         }
 
-        return prog;
+        String result = prog.verifyReferences();
+        if(result == null)
+            return prog;
+        else
+            return new Program(result);
     }
 }

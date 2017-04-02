@@ -10,6 +10,16 @@ public class ProgramSectionError extends ProgramSection {
     }
 
     @Override
+    String getSectionIdentifier() {
+        return null;
+    }
+
+    @Override
+    boolean containsComponentIdentifier(String identifier) {
+        return false;
+    }
+
+    @Override
     ArrayList<String> getAllIdentifiers() {
         return null;
     }
@@ -21,6 +31,11 @@ public class ProgramSectionError extends ProgramSection {
 
     @Override
     ArrayList<String> getAllSectionalReferences() {
+        return null;
+    }
+
+    @Override
+    ArrayList<Reference> getAllReferences() {
         return null;
     }
 }

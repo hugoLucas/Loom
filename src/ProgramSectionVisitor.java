@@ -48,7 +48,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
 
             if(stmtType.equals(Title.TITLE)){
                 Title title = (Title) stmt;
-                if(story.getStoryTitle() == null)
+                if(story.getSectionIdentifier() == null)
                     story.addStoryTitle(title.getTitleContent());
                 else
                     return new ProgramSectionError("DuplicateTitleException: " + ctx.getStart().getLine());

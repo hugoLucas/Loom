@@ -13,6 +13,8 @@ public abstract class ProgramSection {
         this.errorHandler = new ErrorObject(message, true);
     }
 
+    abstract String getSectionIdentifier();
+
     public boolean wasThereAnError(){
         return this.errorHandler.wasThereAnError();
     }
@@ -21,9 +23,13 @@ public abstract class ProgramSection {
         return this.errorHandler.getErrorMessage();
     }
 
+    abstract boolean containsComponentIdentifier(String identifier);
+
     abstract ArrayList<String> getAllIdentifiers();
 
     abstract ArrayList<String> getAllVariableAssignments();
 
     abstract ArrayList<String> getAllSectionalReferences();
+
+    abstract ArrayList<Reference> getAllReferences();
 }

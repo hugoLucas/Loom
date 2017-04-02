@@ -1,3 +1,4 @@
+import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -32,8 +33,13 @@ public class Chapter extends ProgramSection {
         this.chapterTitle = chapterTitle;
     }
 
-    public String getChapterComponentId() {
+    public String getSectionIdentifier() {
         return chapterComponentId;
+    }
+
+    @Override
+    boolean containsComponentIdentifier(String identifier) {
+        return this.chapterComponentId.equals(identifier);
     }
 
     public void setChapterComponentId(String chapterComponentId) {
@@ -172,6 +178,25 @@ public class Chapter extends ProgramSection {
             list.add(this.chapterEndPage);
 
         return list;
+    }
+
+    @Override
+    public ArrayList<Reference> getAllReferences() {
+        ArrayList<Reference> refList = new ArrayList<>();
+        for(Link l : this.chapterLinks){
+            if(l.getLinkReference().getReferenceSource().startsWith("$"))
+               refList.add(l.getLinkReference());
+            else {
+                String componentId = this.chapterIdentifierToComponentIdMap
+                        .get(l.getLinkReference().getReferenceSource());
+                Reference newRef = new Reference(componentId,
+                        l.getLinkReference().getReferenceOption(), true,
+                        l.getLinkReference().getLineNumber());
+                refList.add(newRef);
+            }
+        }
+
+        return refList;
     }
 
     @Override

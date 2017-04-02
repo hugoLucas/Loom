@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by hugoj on 3/24/2017.
  */
 public class Program extends ErrorObject{
 
-    private ArrayList<ProgramSection> programSections;
+    private HashMap<String, ProgramSection> programSectionMap;
     private ArrayList<String> identifierTable;
 
     public Program(String errorMessage){
@@ -15,7 +16,7 @@ public class Program extends ErrorObject{
     public Program(){
         super();
 
-        this.programSections = new ArrayList<>();
+        this.programSectionMap = new HashMap<>();
         this.identifierTable = new ArrayList<>();
     }
 
@@ -40,7 +41,23 @@ public class Program extends ErrorObject{
                 if(!identifierTable.contains(s))
                     return "UndefinedIdentifierInDefinitionException: " + section.toString();
 
-        this.programSections.add(section);
+        this.programSectionMap.put(section.getSectionIdentifier(), section);
+        return null;
+    }
+
+    public String verifyReferences(){
+        for(ProgramSection sec: this.programSectionMap.values()){
+            ArrayList<Reference> stmtReferences = sec.getAllReferences();
+            if(stmtReferences != null)
+                for(Reference ref: stmtReferences){
+                    if(this.programSectionMap.containsKey(ref.getReferenceSource())){
+                        ProgramSection section = this.programSectionMap.get(ref.getReferenceSource());
+                        if(!section.containsComponentIdentifier(ref.getReferenceOption()))
+                            return "InvalidReferenceException: " + ref.getLineNumber();
+                    }else
+                        return "InvalidReferenceException: " + ref.getLineNumber();
+                }
+        }
         return null;
     }
 

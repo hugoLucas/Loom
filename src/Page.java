@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Created by Hugo on 3/23/2017.
@@ -37,8 +38,13 @@ public class Page extends ProgramSection {
         this.pageTitle = pageTitle;
     }
 
-    public String getPageIdentifier() {
+    public String getSectionIdentifier() {
         return pageIdentifier;
+    }
+
+    @Override
+    boolean containsComponentIdentifier(String identifier) {
+        return pageIdentifier.equals(identifier) || this.optionIdentifier.contains(identifier);
     }
 
     public void setPageIdentifier(String pageIdentifier) {
@@ -69,7 +75,7 @@ public class Page extends ProgramSection {
     public boolean isComplete(){
         boolean a = this.getPageText() != null;
         boolean b = this.getPageTitle() != null;
-        boolean c = this.getPageIdentifier() != null;
+        boolean c = this.getSectionIdentifier() != null;
 
         return (a && b && c);
     }
@@ -92,6 +98,17 @@ public class Page extends ProgramSection {
         return null;
     }
 
+    @Override
+    public ArrayList<Reference> getAllReferences() {
+        ArrayList<Reference> referenceList = new ArrayList<>();
+        if(this.hasIfStatement)
+            referenceList.addAll(this.pageIfStatementMap.stream()
+                    .map(IfStatement::getIfStatementReference)
+                    .collect(Collectors.toList()));
+        return referenceList;
+    }
+
+
     public ArrayList<String> getPageOptions(){
         return this.optionIdentifier;
     }
@@ -102,6 +119,10 @@ public class Page extends ProgramSection {
                 return false;
 
         this.pageIfStatementMap.add(ifStmt);
+
+        if(!this.hasIfStatement)
+            this.hasIfStatement = true;
+
         return true;
     }
 

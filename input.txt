@@ -74,7 +74,7 @@ CHAPTER{
     PG[START]:five
     PG[END]:six
 
-    LINK[five.$e][six]
+    LINK[five.$jumbo][six]
 }
 
 SECTION{
