@@ -13,20 +13,25 @@ public class Link extends Statement {
     private String linkChapterSource;
     private String linkChapterTarget;
 
+    private int linkLineNumber;
 
-    public Link(Reference linkRef, String linkVariable){
+
+    public Link(Reference linkRef, String linkVariable, int linkLineNumber){
         this.linkReference = linkRef;
         this.linkVariableReference = linkVariable;
+        this.linkLineNumber = linkLineNumber;
     }
 
-    public Link(Reference linkRef, ComponentID linkCompId){
+    public Link(Reference linkRef, ComponentID linkCompId, int linkLineNumber){
         this.linkReference = linkRef;
         this.linkCompIdReference = linkCompId;
+        this.linkLineNumber = linkLineNumber;
     }
 
-    public Link(String one, String two){
+    public Link(String one, String two, int linkLineNumber){
         this.linkChapterSource = one;
         this.linkChapterTarget = two;
+        this.linkLineNumber = linkLineNumber;
     }
 
     public boolean hasLinkVariableReference(){
@@ -69,5 +74,9 @@ public class Link extends Statement {
     public boolean arrowLinkEquals(Link l){
         return (this.linkChapterSource.equals(l.getLinkChapterSource()) &&
                 this.linkChapterTarget.equals(l.getLinkChapterTarget()));
+    }
+
+    public int getLinkLineNumber() {
+        return linkLineNumber;
     }
 }

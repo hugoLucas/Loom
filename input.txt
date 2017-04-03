@@ -60,8 +60,8 @@ CHAPTER{
     PG[END]:four
 
     LINK[one.$a][two]
-    LINK[two.$a][three]
-    LINK[three.$c][four]
+    LINK[one.$b][three]
+    LINK[two.$c][four]
     LINK[three.$d][four]
 }
 
@@ -74,7 +74,7 @@ CHAPTER{
     PG[START]:five
     PG[END]:six
 
-    LINK[five.$jumbo][six]
+    LINK[five.$e][six]
 }
 
 SECTION{

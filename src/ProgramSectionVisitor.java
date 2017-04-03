@@ -156,7 +156,7 @@ public class ProgramSectionVisitor extends Loom2BaseVisitor<ProgramSection> {
                 }
 
                 if(!ch.addLink(link))
-                    return new ProgramSectionError("SOMETHING WENT WRONG !!!!");
+                    return new ProgramSectionError("DuplicateLinkException: " + link.getLinkLineNumber());
             }
         }
         if(ch.isComplete())
