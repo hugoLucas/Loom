@@ -8,7 +8,6 @@ public class StatementVisitor extends Loom2BaseVisitor<Statement> {
     private int TITLE = 27;
     private int LINK = 18;
 
-
     @Override
     public Statement visitStatements(Loom2Parser.StatementsContext ctx) {
         if(ctx.getStart().getType() == TITLE){ /* Title */

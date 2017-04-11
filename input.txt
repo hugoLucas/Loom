@@ -44,6 +44,10 @@ PAGE{
     TITLE:"page_six"[$pg_six]
 
     TEXT:"you have caught dysentery"
+
+    IF[$pg_five.$e]:
+        OPTION[$f]:"head east"
+    ENDIF
 }
 
 CHAPTER{

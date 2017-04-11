@@ -10,7 +10,7 @@ public class IfStatementVisitor extends Loom2BaseVisitor<IfStatement> {
         Definition def = ctx.definition().accept(new DefinitionVisitor());
         String definitionType = def.getStatementType();
 
-        if(!definitionType.equals(Text.TEXT) /*&& !definitionType.equals(Option.OPTION)*/ )
+        if(!definitionType.equals(Text.TEXT) && !definitionType.equals(Option.OPTION) )
             return new IfStatement("InvalidIfStatementContentsException: " + ctx.definition().getStart().getLine());
         else if(!ref.hasComponentId())
             return new IfStatement("InvalidIfStatementException: " + ctx.definition().getStart().getLine());
