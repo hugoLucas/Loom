@@ -126,6 +126,10 @@ public class Page extends ProgramSection {
         return true;
     }
 
+    public ArrayList<String> getPageOptionText(){
+        return this.optionText;
+    }
+
     @Override
     public String toString(){
         return "PAGE";

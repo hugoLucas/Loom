@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 /**
  * Created by hugoj on 3/24/2017.
@@ -59,6 +60,13 @@ public class Program extends ErrorObject{
                 }
         }
         return null;
+    }
+
+    public ArrayList<Page> getAllPages(){
+        return this.programSectionMap.values()
+                .stream().filter(s -> s instanceof Page)
+                .map(s -> (Page) s)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public String returnErrorMessage(){

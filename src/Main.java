@@ -20,6 +20,11 @@ public class Main {
 
         if(program.wasThereAnError())
             System.out.println(program.returnErrorMessage());
+        else{
+            /* Code generation goes in here ! */
+            CodeGenerator gen = new CodeGenerator(program);
+            gen.build();
+        }
     }
 
     public static String fileToString(String path) throws IOException {
