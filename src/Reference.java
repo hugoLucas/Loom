@@ -41,6 +41,16 @@ public class Reference {
         return this.referenceOption;
     }
 
+    public void setReferenceSource(String newSource, boolean usingComponentID){
+        if(usingComponentID) {
+            this.referencePageComponentID = newSource;
+            this.referencePageIdentifier = null;
+        }else{
+            this.referencePageComponentID = null;
+            this.referencePageIdentifier = newSource;
+        }
+    }
+
     public boolean equalTo(Reference ref){
         if(this.getReferenceSource().equals(ref.getReferenceSource()))
             if(this.getReferenceOption().equals(ref.getReferenceOption()))

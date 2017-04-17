@@ -32,4 +32,6 @@ public abstract class ProgramSection {
     abstract ArrayList<String> getAllSectionalReferences();
 
     abstract ArrayList<Reference> getAllReferences();
+
+    abstract  ArrayList<Link> getAllLinks();
 }

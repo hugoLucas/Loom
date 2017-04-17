@@ -108,6 +108,11 @@ public class Page extends ProgramSection {
         return referenceList;
     }
 
+    @Override
+    public ArrayList<Link> getAllLinks() {
+        return null;
+    }
+
 
     public ArrayList<String> getPageOptions(){
         return this.optionIdentifier;

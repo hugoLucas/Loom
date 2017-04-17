@@ -69,6 +69,16 @@ public class Program extends ErrorObject{
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    public ArrayList<Link> getAllChapterLinks(){
+        ArrayList<Link> chapterLinks = new ArrayList<>();
+        this.programSectionMap.values().stream().filter(s -> s instanceof Chapter).forEach(s -> {
+            ArrayList<Link> linkList = s.getAllLinks();
+            if (linkList != null)
+                chapterLinks.addAll(linkList);
+        });
+        return chapterLinks;
+    }
+
     public String returnErrorMessage(){
         return this.getErrorMessage();
     }

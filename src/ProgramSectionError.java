@@ -38,4 +38,9 @@ public class ProgramSectionError extends ProgramSection {
     ArrayList<Reference> getAllReferences() {
         return null;
     }
+
+    @Override
+    ArrayList<Link> getAllLinks() {
+        return null;
+    }
 }

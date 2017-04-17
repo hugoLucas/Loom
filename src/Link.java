@@ -63,6 +63,7 @@ public class Link extends Statement {
         this.linkChapterSource = linkChapterSource;
     }
 
+
     public String getLinkChapterTarget() {
         return linkChapterTarget;
     }

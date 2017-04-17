@@ -85,6 +85,11 @@ public class Story extends ProgramSection {
     public ArrayList<Reference> getAllReferences() { return null; }
 
     @Override
+    public ArrayList<Link> getAllLinks() {
+        return null;
+    }
+
+    @Override
     public String toString(){
         return "STORY";
     }

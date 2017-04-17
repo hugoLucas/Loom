@@ -2,43 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89020561-b317-40db-b6b2-faa1293102cb" name="Default" comment="small grammar changes">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$Chapter_linksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$FileContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$File_assignmentContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$File_linksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$FilesContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$Inner_component_idContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$Section_linksContext.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomBaseListener.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomBaseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomLexer.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomLexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomListener.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$ChapterContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$ChapterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$Chapter_assignmentContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$Chapter_assignmentContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$ChaptersContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$ChaptersContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$Component_idContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$Component_idContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$IdentifierContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$IdentifierContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$ProgramContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$ProgramContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$SectionContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$SectionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$Section_assignmentContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$Section_assignmentContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$SectionsContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$SectionsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$StoryContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$StoryContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$StringContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$StringContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser$TitleContext.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser$TitleContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomParser.class" afterPath="$PROJECT_DIR$/out/production/Stock/LoomParser.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Loom.g4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Loom.tokens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomBaseListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomBaseListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomLexer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomLexer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomLexer.tokens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$ChapterContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Chapter_assignmentContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Chapter_linksContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$ChaptersContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Component_idContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$FileContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$File_assignmentContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$File_linksContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$FilesContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$IdentifierContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Inner_component_idContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$LinkContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$OptionContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$PageContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Page_assignmentContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Page_linksContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$PagesContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$ProgramContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$SectionContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Section_assignmentContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Section_linksContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$SectionsContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$StoryContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$StringContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$TextContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$TitleContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Stock.g4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Stock.tokens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockBaseListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockBaseListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockLexer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockLexer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockLexer.tokens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$AssignmentsContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$AttributeContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$BuyContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$ConditionContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$DateContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$HedgeContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$IdentifierContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$LogicalContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$OptionContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$PeriodContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$PickContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$PicksContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$ProgramContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$SellContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$StrikeContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$StringContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$SymbolContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/Main.class" afterPath="$PROJECT_DIR$/out/production/Stock/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$AssignmentContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$AssignmentContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$Component_idContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$Component_idContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$DefinitionContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$DefinitionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$If_statementContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$If_statementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$LinkContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$LinkContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$ProgramContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$ProgramContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$ReferenceContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$ReferenceContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$SectionsContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$SectionsContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$StatementsContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$StatementsContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$TitleContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$TitleContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser.class" afterPath="$PROJECT_DIR$/src/Loom2Parser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoomInput_Chapter" afterPath="$PROJECT_DIR$/LoomInput_Chapter" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/Loom.g4" afterPath="$PROJECT_DIR$/out/production/Stock/Loom.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/Loom.tokens" afterPath="$PROJECT_DIR$/out/production/Stock/Loom.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/LoomLexer.tokens" afterPath="$PROJECT_DIR$/out/production/Stock/LoomLexer.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom.g4" afterPath="$PROJECT_DIR$/src/Loom.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom.tokens" afterPath="$PROJECT_DIR$/src/Loom.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoomBaseListener.java" afterPath="$PROJECT_DIR$/src/LoomBaseListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoomLexer.java" afterPath="$PROJECT_DIR$/src/LoomLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoomLexer.tokens" afterPath="$PROJECT_DIR$/src/LoomLexer.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoomListener.java" afterPath="$PROJECT_DIR$/src/LoomListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoomParser.java" afterPath="$PROJECT_DIR$/src/LoomParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chapter.java" afterPath="$PROJECT_DIR$/src/Chapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CodeGenerator.java" afterPath="$PROJECT_DIR$/src/CodeGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Link.java" afterPath="$PROJECT_DIR$/src/Link.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2BaseListener.java" afterPath="$PROJECT_DIR$/src/Loom2BaseListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2BaseVisitor.java" afterPath="$PROJECT_DIR$/src/Loom2BaseVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Lexer.java" afterPath="$PROJECT_DIR$/src/Loom2Lexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Listener.java" afterPath="$PROJECT_DIR$/src/Loom2Listener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser.java" afterPath="$PROJECT_DIR$/src/Loom2Parser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Page.java" afterPath="$PROJECT_DIR$/src/Page.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Program.java" afterPath="$PROJECT_DIR$/src/Program.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProgramSection.java" afterPath="$PROJECT_DIR$/src/ProgramSection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProgramSectionError.java" afterPath="$PROJECT_DIR$/src/ProgramSectionError.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reference.java" afterPath="$PROJECT_DIR$/src/Reference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Section.java" afterPath="$PROJECT_DIR$/src/Section.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Story.java" afterPath="$PROJECT_DIR$/src/Story.java" />
     </list>
     <ignored path="Stock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,24 +119,110 @@
     <favorites_list name="Stock" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4531479">
+    <splitter split-orientation="horizontal" split-proportion="0.7676991">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Loom.g4" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Loom.g4">
+          <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/input.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+                <state relative-caret-position="1360">
+                  <caret line="80" column="16" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Loom.tokens" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Loom.tokens">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CodeGenerator.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/CodeGenerator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="287">
+                  <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Program.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1258">
+                  <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Chapter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Chapter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3485">
+                  <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Reference.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Reference.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Link.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Link.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1173">
+                  <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#1031#1032#0" expanded="true" />
+                    <element signature="e#1088#1089#0" expanded="true" />
+                    <element signature="e#1135#1136#0" expanded="true" />
+                    <element signature="e#1184#1185#0" expanded="true" />
+                    <element signature="e#1343#1344#0" expanded="true" />
+                    <element signature="e#1384#1385#0" expanded="true" />
+                    <element signature="e#2120#2121#0" expanded="true" />
+                    <element signature="e#2157#2158#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Statement.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Statement.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#140#141#0" expanded="true" />
+                    <element signature="e#193#194#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Loom2.g4" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Loom2.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="16" column="48" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -86,24 +232,12 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="LoomInput_Chapter" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
+          <file leaf-file-name="input.txt" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/input.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="438">
+                  <caret line="80" column="16" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="16" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -132,6 +266,16 @@
         <option value="$PROJECT_DIR$/LoomInput_Chapter" />
         <option value="$PROJECT_DIR$/src/Loom.g4" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/ProgramSection.java" />
+        <option value="$PROJECT_DIR$/src/Page.java" />
+        <option value="$PROJECT_DIR$/src/Section.java" />
+        <option value="$PROJECT_DIR$/src/Story.java" />
+        <option value="$PROJECT_DIR$/src/Reference.java" />
+        <option value="$PROJECT_DIR$/src/ProgramSectionError.java" />
+        <option value="$PROJECT_DIR$/src/Chapter.java" />
+        <option value="$PROJECT_DIR$/src/Link.java" />
+        <option value="$PROJECT_DIR$/src/Program.java" />
+        <option value="$PROJECT_DIR$/src/CodeGenerator.java" />
       </list>
     </option>
   </component>
@@ -143,9 +287,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1372" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -173,7 +316,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,7 +351,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,24 +375,7 @@
       <recent name="C:\Users\Hugo Lucas\IdeaProjects\Stock" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ANTLR">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Stock" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -318,13 +444,134 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ClojureREPL" factoryName="Local">
-      <setting name="replType" value="1" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
-      <setting name="jvmArgs" value="" />
-      <setting name="parameters" value="" />
-      <setting name="workingDir" value="" />
-      <setting name="profiles" value="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -341,6 +588,15 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -406,6 +662,9 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -428,6 +687,12 @@
       <option name="passParentEnvs" value="true" />
       <option name="workingDirectory" />
       <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
       <envs />
       <method />
     </configuration>
@@ -487,6 +752,28 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
     <configuration default="false" name="ANTLR" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="org.antlr.v4.gui.TestRig" />
@@ -502,15 +789,27 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Loom2" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.ANTLR" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -527,6 +826,13 @@
       <updated>1486601339677</updated>
       <workItem from="1486601342251" duration="4027000" />
       <workItem from="1486677167072" duration="9279000" />
+      <workItem from="1487396291149" duration="69000" />
+      <workItem from="1487396372248" duration="941000" />
+      <workItem from="1492368630938" duration="7000" />
+      <workItem from="1492368670668" duration="2554000" />
+      <workItem from="1492399624588" duration="1840000" />
+      <workItem from="1492452706501" duration="4535000" />
+      <workItem from="1492457457773" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="small grammar changes">
       <created>1486743858822</created>
@@ -539,10 +845,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13306000" />
+    <option name="totallyTimeSpent" value="23275000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="0" width="1372" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -552,29 +858,60 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2744807" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1193265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18141593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4164038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2807571" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21102941" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -592,7 +929,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="small grammar changes" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -600,27 +939,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Loom.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
+    <entry file="file://$PROJECT_DIR$/src/Loom.tokens" />
     <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -634,27 +958,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
+    <entry file="file://$PROJECT_DIR$/src/Loom.tokens" />
     <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
+    <entry file="file://$PROJECT_DIR$/src/Loom.tokens" />
+    <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -672,50 +1000,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
     <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
     <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -726,13 +1030,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stock.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="22" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stock.g4" />
     <entry file="file://$PROJECT_DIR$/input">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -740,13 +1038,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StockParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StockParser.java" />
     <entry file="file://$PROJECT_DIR$/Stock.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -761,13 +1053,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StockLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StockLexer.java" />
     <entry file="file://$PROJECT_DIR$/input">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -790,50 +1076,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stock.g4">
+    <entry file="file://$PROJECT_DIR$/src/Stock.g4" />
+    <entry file="file://$PROJECT_DIR$/src/LoomLexer.java" />
+    <entry file="file://$PROJECT_DIR$/src/Loom.g4" />
+    <entry file="file://$PROJECT_DIR$/src/Loom.tokens" />
+    <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoomLexer.java">
+    <entry file="file://$PROJECT_DIR$/src/Loom2BaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
+        <state relative-caret-position="187">
+          <caret line="11" column="80" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.tokens">
+    <entry file="file://$PROJECT_DIR$/src/ProgramSection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom2Parser$SectionsContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Story.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Section.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="203" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom2.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="48" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Loom2Parser$ReferenceContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProgramSectionError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#140#141#0" expanded="true" />
+            <element signature="e#193#194#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Link.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3485">
+          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LoomInput_Chapter">
+    <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1258">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Loom.g4">
+    <entry file="file://$PROJECT_DIR$/src/CodeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+        <state relative-caret-position="287">
+          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="80" column="16" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -20,13 +20,13 @@ chapters: CHAPTER (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (ch
 
 // CHAPTER EXCLUSIVE GRAMMER
 
-chapter: CHAPTER LCURL title (page_assignment)? pages* page_links* RCURL;
+chapter: CHAPTER LCURL title (page_assignment)? pages page_links? RCURL;
 
 page_assignment: identifier COLON component_id (page_assignment)?;
 
-pages: PAGE (LBRAK (START|END) RBRAK)? COLON (component_id|identifier);
+pages: PAGE (LBRAK (START|END) RBRAK)? COLON (component_id|identifier) (pages)?;
 
-page_links: LINK LBRAK (component_id|identifier) DOT (component_id|identifier) RBRAK LBRAK (component_id|identifier) RBRAK;
+page_links: LINK LBRAK (component_id|identifier) DOT (component_id|identifier) RBRAK LBRAK (component_id|identifier) RBRAK (page_links)?;
 
 // PAGE EXCLUSIVE GRAMMER
 

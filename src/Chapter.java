@@ -200,6 +200,26 @@ public class Chapter extends ProgramSection {
     }
 
     @Override
+    public ArrayList<Link> getAllLinks() {
+        ArrayList<Reference> refList = this.getAllReferences();
+        ArrayList<Link> linkList = new ArrayList<>(this.chapterLinks.size());
+
+        for(int i = 0; i < refList.size(); i ++){
+            Reference linkRef = refList.get(i);
+
+            String linkId = null;
+            if(this.chapterLinks.get(i).hasLinkVariableReference())
+                linkId = this.chapterIdentifierToComponentIdMap.get(this.chapterLinks.get(i).getLinkVariableReference());
+            else
+                linkId = this.chapterLinks.get(i).getLinkCompIdReferenceAsString();
+
+            linkList.add(new Link(linkRef, linkId, this.chapterLinks.get(i).getLinkLineNumber()));
+        }
+
+        return linkList;
+    }
+
+    @Override
     public String toString(){
         return "Chapter";
     }

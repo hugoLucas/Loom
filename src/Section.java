@@ -188,6 +188,23 @@ public class Section extends ProgramSection {
     }
 
     @Override
+    public ArrayList<Link> getAllLinks() {
+        ArrayList<Link> formattedLinks = new ArrayList<>(this.sectionLinks.size());
+        for(Link l : this.sectionLinks){
+            String source = l.getLinkChapterSource();
+            String destination = l.getLinkChapterTarget();
+
+            if(!source.startsWith("$"))
+                l.setLinkChapterSource(this.sectionIdentifierToComponentIdMap.get(source));
+            if(!destination.startsWith("$"))
+                l.setLinkChapterSource(this.sectionIdentifierToComponentIdMap.get(source));
+
+            formattedLinks.add(l);
+        }
+        return formattedLinks;
+    }
+
+    @Override
     public String toString(){
         return "Section";
     }

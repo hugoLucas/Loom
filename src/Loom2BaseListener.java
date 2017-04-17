@@ -1,4 +1,4 @@
-// Generated from Loom2.g4 by ANTLR 4.6
+// Generated from C:\Users\Hugo Lucas\IdeaProjects\Loom\src\Loom2.g4 by ANTLR 4.6
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
