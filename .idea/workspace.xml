@@ -1,104 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89020561-b317-40db-b6b2-faa1293102cb" name="Default" comment="small grammar changes">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Loom.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Loom.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomBaseListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomBaseListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomLexer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomLexer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomLexer.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$ChapterContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Chapter_assignmentContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Chapter_linksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$ChaptersContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Component_idContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$FileContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$File_assignmentContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$File_linksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$FilesContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$IdentifierContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Inner_component_idContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$LinkContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$OptionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$PageContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Page_assignmentContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Page_linksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$PagesContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$ProgramContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$SectionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Section_assignmentContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$Section_linksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$SectionsContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$StoryContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$StringContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$TextContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser$TitleContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoomParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Stock.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Stock.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockBaseListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockBaseListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockLexer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockLexer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockLexer.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$AssignmentsContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$AttributeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$BuyContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$ConditionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$DateContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$HedgeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$IdentifierContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$LogicalContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$OptionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$PeriodContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$PickContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$PicksContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$ProgramContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$SellContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$StrikeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$StringContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser$SymbolContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StockParser.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/Main.class" afterPath="$PROJECT_DIR$/out/production/Stock/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$AssignmentContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$AssignmentContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$Component_idContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$Component_idContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$DefinitionContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$DefinitionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$If_statementContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$If_statementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$LinkContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$LinkContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$ProgramContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$ProgramContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$ReferenceContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$ReferenceContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$SectionsContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$SectionsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$StatementsContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$StatementsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser$TitleContext.class" afterPath="$PROJECT_DIR$/src/Loom2Parser$TitleContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser.class" afterPath="$PROJECT_DIR$/src/Loom2Parser.class" />
+    <list default="true" id="89020561-b317-40db-b6b2-faa1293102cb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Loom2BaseVisitor.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Loom2Visitor.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Loom2Visitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stock/Loom.g4" afterPath="$PROJECT_DIR$/out/production/Stock/Loom.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chapter.java" afterPath="$PROJECT_DIR$/src/Chapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CodeGenerator.java" afterPath="$PROJECT_DIR$/src/CodeGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Link.java" afterPath="$PROJECT_DIR$/src/Link.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2BaseListener.java" afterPath="$PROJECT_DIR$/src/Loom2BaseListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2BaseVisitor.java" afterPath="$PROJECT_DIR$/src/Loom2BaseVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Lexer.java" afterPath="$PROJECT_DIR$/src/Loom2Lexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Listener.java" afterPath="$PROJECT_DIR$/src/Loom2Listener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Loom2Parser.java" afterPath="$PROJECT_DIR$/src/Loom2Parser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Page.java" afterPath="$PROJECT_DIR$/src/Page.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Program.java" afterPath="$PROJECT_DIR$/src/Program.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProgramSection.java" afterPath="$PROJECT_DIR$/src/ProgramSection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProgramSectionError.java" afterPath="$PROJECT_DIR$/src/ProgramSectionError.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reference.java" afterPath="$PROJECT_DIR$/src/Reference.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Section.java" afterPath="$PROJECT_DIR$/src/Section.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Story.java" afterPath="$PROJECT_DIR$/src/Story.java" />
     </list>
     <ignored path="Stock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,7 +26,7 @@
     <favorites_list name="Stock" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7676991">
+    <splitter split-orientation="horizontal" split-proportion="0.56216216">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
@@ -135,7 +42,7 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
+                <state relative-caret-position="153">
                   <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -189,7 +96,7 @@
           <file leaf-file-name="Link.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Link.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1173">
+                <state relative-caret-position="1037">
                   <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
                   <folding>
                     <element signature="e#1031#1032#0" expanded="true" />
@@ -832,7 +739,8 @@
       <workItem from="1492368670668" duration="2554000" />
       <workItem from="1492399624588" duration="1840000" />
       <workItem from="1492452706501" duration="4535000" />
-      <workItem from="1492457457773" duration="23000" />
+      <workItem from="1492457457773" duration="653000" />
+      <workItem from="1492475240073" duration="136000" />
     </task>
     <task id="LOCAL-00001" summary="small grammar changes">
       <created>1486743858822</created>
@@ -841,15 +749,22 @@
       <option name="project" value="LOCAL" />
       <updated>1486743858822</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IR code work">
+      <created>1492457500533</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492457500533</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23275000" />
+    <option name="totallyTimeSpent" value="24041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1372" height="735" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -858,12 +773,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18141593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18141593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -926,7 +841,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="small grammar changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small grammar changes" />
+    <MESSAGE value="IR code work" />
+    <option name="LAST_COMMIT_MESSAGE" value="IR code work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1098,6 +1014,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
           <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,6 +1029,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding>
+            <element signature="e#3136#3137#0" expanded="false" />
+            <element signature="e#3163#3164#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,6 +1040,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+          <folding>
+            <element signature="e#2279#2280#0" expanded="false" />
+            <element signature="e#2306#2307#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,6 +1051,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="203" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,6 +1074,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="e#802#803#0" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,7 +1094,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Link.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
+        <state relative-caret-position="1037">
           <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="e#1031#1032#0" expanded="true" />
@@ -1197,7 +1127,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="153">
           <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
