@@ -19,6 +19,8 @@ public class IfStatement extends Statement {
         this.lineNumber = lineNum;
     }
 
+    public Definition getIfStatementDefinition() { return this.ifStatementDefinition; }
+
     public Reference getIfStatementReference(){
         return this.ifStatementReference;
     }

@@ -85,6 +85,13 @@ public class Page extends ProgramSection {
         ArrayList<String> identifierList = new ArrayList<>(1 + this.optionIdentifier.size());
         identifierList.add(this.pageIdentifier);
         identifierList.addAll(this.optionIdentifier);
+        if(this.pageIfStatementMap.size() > 0){
+            for (IfStatement ifStmt : this.pageIfStatementMap){
+                Definition currentDefinition = ifStmt.getIfStatementDefinition();
+                if(currentDefinition != null && currentDefinition instanceof Option)
+                    identifierList.add(((Option) currentDefinition).getOptionIdentifier());
+            }
+        }
         return identifierList;
     }
 
