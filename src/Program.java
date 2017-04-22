@@ -10,6 +10,8 @@ public class Program extends ErrorObject{
     private HashMap<String, ProgramSection> programSectionMap;
     private ArrayList<String> identifierTable;
 
+    private boolean STORY = false;
+
     public Program(String errorMessage){
         super(errorMessage, true);
     }
@@ -41,6 +43,11 @@ public class Program extends ErrorObject{
             for(String s: sectionalReferences)
                 if(!identifierTable.contains(s))
                     return "UndefinedIdentifierInDefinitionException: " + section.toString();
+
+        if(section instanceof Story && !this.STORY)
+            this.STORY = true;
+        else if(section instanceof Story && this.STORY)
+            return "MultipleStoryException";
 
         this.programSectionMap.put(section.getSectionIdentifier(), section);
         return null;
@@ -77,6 +84,27 @@ public class Program extends ErrorObject{
                 chapterLinks.addAll(linkList);
         });
         return chapterLinks;
+    }
+
+    public ArrayList<Link> getAllSectionLinks(){
+        ArrayList<Link> sectionLinks = new ArrayList<>();
+        this.programSectionMap.values().stream().filter(s -> s instanceof Section).forEach(s -> {
+            ArrayList<Link> linkList = s.getAllLinks();
+            if (linkList != null)
+                sectionLinks.addAll(linkList);
+        });
+        return sectionLinks;
+    }
+
+    public Story returnStorySection(){
+        for (ProgramSection s : this.programSectionMap.values())
+            if(s instanceof Story)
+                return (Story) s;
+        return null;
+    }
+
+    public ProgramSection getProgramSection(String identifier){
+        return this.programSectionMap.get(identifier);
     }
 
     public String returnErrorMessage(){

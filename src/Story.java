@@ -93,4 +93,23 @@ public class Story extends ProgramSection {
     public String toString(){
         return "STORY";
     }
+
+    public String getStartIdentifier(){
+        String startSection = null;
+        for(Sec s: this.storySections)
+            if(s.getSectionStart())
+                startSection = s.getSectionIdAsString();
+
+        return startSection;
+    }
+
+    public String getEndIdentifier(){
+        String endSection = null;
+        for(Sec s: this.storySections)
+            if(s.getSectionStart())
+                endSection = s.getSectionIdentifier();
+
+        return endSection;
+    }
+
 }

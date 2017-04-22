@@ -1,4 +1,4 @@
-PAGE {
+PAGE{
     TITLE:"page_one"[$pg_one]
 
     TEXT:"you are in a library"

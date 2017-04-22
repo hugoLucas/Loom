@@ -4,7 +4,7 @@
 public class StatementVisitor extends Loom2BaseVisitor<Statement> {
 
     private int KEY_INDENT = 2;
-    private int NONWSSTR = 30;
+    private int NONWSSTR = 32;
     private int TITLE = 27;
     private int LINK = 18;
 

@@ -80,6 +80,10 @@ SEMICOLON: ';';
 
 UNDERSCORE: '_';
 
+FSLASH: '/';
+
+STAR: '*';
+
 NONWSSTR: ([a-zA-Z]+ (UNDERSCORE)?)+;
 
 STRING : '"' ( '\\' [\\"] | ~[\\"\r\n] )* '"';

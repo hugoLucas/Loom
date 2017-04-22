@@ -219,6 +219,14 @@ public class Chapter extends ProgramSection {
         return linkList;
     }
 
+    public String getChapterStartPage(){
+        return this.chapterIdentifierToComponentIdMap.get(this.chapterStartPage);
+    }
+
+    public String getChapterEndPage(){
+        return this.chapterIdentifierToComponentIdMap.get(this.chapterEndPage);
+    }
+
     @Override
     public String toString(){
         return "Chapter";

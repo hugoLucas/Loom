@@ -20,13 +20,36 @@ public class CodeGenerator {
     }
 
     public void build(){
-        this.extractAndBuildPages();
-        this.bindAllPages();
+        this.extractAndBuildPages().bindAllPages().bindAllSections().assembleStory();
     }
 
-    private void bindAllPages() {
+    public CodeGenerator assembleStory(){
+        String startSection = baseProgram.returnStorySection().getStartIdentifier();
+        String startChapter = ((Section) baseProgram.getProgramSection(startSection)).getSectionStartChapter();
+        String startPage = ((Chapter) baseProgram.getProgramSection(startChapter)).getChapterStartPage();
+
+
+        System.out.println("currentGame.setStart(\"" + startPage + "\");");
+        return this;
+    }
+
+    private CodeGenerator bindAllSections() {
+        ArrayList<Link> sectionLinkList = baseProgram.getAllSectionLinks();
+        for(Link l: sectionLinkList){
+            Chapter chapterSource = (Chapter) baseProgram.getProgramSection(l.getLinkChapterSource());
+            String chapterSourceEnd = this.identifierToNodeNameMap.get(chapterSource.getChapterEndPage());
+
+            Chapter chapterTarget = (Chapter) baseProgram.getProgramSection(l.getLinkChapterTarget());
+            String chapterTargetStart = this.identifierToNodeNameMap.get(chapterTarget.getChapterStartPage());
+
+            System.out.println("currentGame.connectSections(\"" + chapterSourceEnd + "\", \"" + chapterTargetStart + "\");");
+        }
+        return this;
+    }
+
+    private CodeGenerator bindAllPages() {
         ArrayList<Link> chapterLinkList = baseProgram.getAllChapterLinks();
-        for(Link l: chapterLinkList){
+        for(Link l: chapterLinkList) {
             Reference currentLinkReference = l.getLinkReference();
             String sourcePage = currentLinkReference.getReferenceSource();
             String sourceOption = currentLinkReference.getReferenceOption();
@@ -38,9 +61,10 @@ public class CodeGenerator {
             System.out.println("currentGame.addLinkToGame(\"" + sourcePageIC + "\", \"" + sourceOption
                     + "\", \"" + targetPageIC + "\");");
         }
+        return this;
     }
 
-    public void extractAndBuildPages(){
+    public CodeGenerator extractAndBuildPages(){
         int nodeCounter = 0;
         ArrayList<Page> pageList = this.baseProgram.getAllPages();
         for(Page p: pageList){
@@ -61,5 +85,7 @@ public class CodeGenerator {
                     "\"node_" + nodeCounter + "\");");
             nodeCounter++;
         }
+
+        return this;
     }
 }

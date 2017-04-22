@@ -197,11 +197,15 @@ public class Section extends ProgramSection {
             if(!source.startsWith("$"))
                 l.setLinkChapterSource(this.sectionIdentifierToComponentIdMap.get(source));
             if(!destination.startsWith("$"))
-                l.setLinkChapterSource(this.sectionIdentifierToComponentIdMap.get(source));
+                l.setLinkChapterTarget(this.sectionIdentifierToComponentIdMap.get(destination));
 
             formattedLinks.add(l);
         }
         return formattedLinks;
+    }
+
+    public String getSectionStartChapter(){
+        return this.sectionIdentifierToComponentIdMap.get(this.sectionStartChapter);
     }
 
     @Override
