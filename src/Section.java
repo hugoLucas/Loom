@@ -205,7 +205,10 @@ public class Section extends ProgramSection {
     }
 
     public String getSectionStartChapter(){
-        return this.sectionIdentifierToComponentIdMap.get(this.sectionStartChapter);
+        String compId = this.sectionIdentifierToComponentIdMap.get(this.sectionStartChapter);
+        if(compId != null)
+            return compId;
+        return this.sectionStartChapter;
     }
 
     @Override

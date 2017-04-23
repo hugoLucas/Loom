@@ -25,7 +25,9 @@ public class CodeGenerator {
 
     public CodeGenerator assembleStory(){
         String startSection = baseProgram.returnStorySection().getStartIdentifier();
-        String startChapter = ((Section) baseProgram.getProgramSection(startSection)).getSectionStartChapter();
+        //String startChapter = ((Section) baseProgram.getProgramSection(startSection)).getSectionStartChapter();
+        Section s = (Section) baseProgram.getProgramSection(startSection);
+        String startChapter = s.getSectionStartChapter();
         String startPage = ((Chapter) baseProgram.getProgramSection(startChapter)).getChapterStartPage();
 
 
@@ -80,12 +82,26 @@ public class CodeGenerator {
             for(int i = 0; i < nodeOptionsId.size(); i ++)
                 System.out.println("node_" + nodeCounter + ".addOption(\"" +
                         nodeOptionsId.get(i) + "\", " + nodeOptionsTxt.get(i) + ");");
+            this.addIfStatementOptions(p, nodeCounter);
 
             System.out.println("currentGame.addNodesToGame(node_" + nodeCounter + ", " +
-                    "\"node_" + nodeCounter + "\");");
+                    "\"node_" + nodeCounter + "\");" + "\n");
             nodeCounter++;
         }
 
         return this;
+    }
+
+    public void addIfStatementOptions(Page p, int nodeCounter){
+        if(p.hasIfStatement()) {
+            ArrayList<String> nodeIfOptionsId = p.getIfStatementPageOptions();
+            ArrayList<String> nodeIfOptionsTxt = p.getIfStatementPageText();
+            ArrayList<Reference> refs = p.getIfStatementReferences();
+
+            for (int i = 0; i < nodeIfOptionsId.size(); i++)
+                System.out.println("node_" + nodeCounter + ".addIfOption(\""
+                        + nodeIfOptionsId.get(i) + "\", " + nodeIfOptionsTxt.get(i) + ", \""
+                        + refs.get(i).getReferenceOption() + "\", \"" + refs.get(i).getReferenceSource() + "\");");
+        }
     }
 }

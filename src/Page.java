@@ -1,3 +1,4 @@
+import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -130,8 +131,11 @@ public class Page extends ProgramSection {
 
 
     public ArrayList<String> getPageOptions(){
+        return this.optionIdentifier;
+    }
+
+    public ArrayList<String> getIfStatementPageOptions(){
         ArrayList<String> options = new ArrayList<>();
-        options.addAll(this.optionIdentifier);
         if(this.pageIfStatementMap.size() > 0)
             options.addAll(this.pageIfStatementMap.stream()
                     .map(stmt -> ((Option) stmt.getIfStatementDefinition()).getOptionIdentifier())
@@ -153,13 +157,26 @@ public class Page extends ProgramSection {
     }
 
     public ArrayList<String> getPageOptionText(){
+        return this.optionText;
+    }
+
+    public ArrayList<String> getIfStatementPageText(){
         ArrayList<String> text = new ArrayList<>();
-        text.addAll(this.optionText);
         if(this.pageIfStatementMap.size() > 0)
             text.addAll(this.pageIfStatementMap.stream()
                     .map(stmt -> ((Option) stmt.getIfStatementDefinition()).getOptionText())
                     .collect(Collectors.toList()));
         return text;
+    }
+
+    public ArrayList<Reference> getIfStatementReferences(){
+        return this.pageIfStatementMap.stream()
+                .map(IfStatement::getIfStatementReference)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public boolean hasIfStatement(){
+        return this.hasIfStatement;
     }
 
     @Override

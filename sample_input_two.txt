@@ -101,6 +101,7 @@ CHAPTER{
 
     LINK[awake.$a_awaken][chain]
     LINK[awake.$b_awaken][disc]
+    LINK[disc.$a_discovery][chain]
     LINK[chain.$a_chained][res]
     LINK[chain.$b_chained][door]
     LINK[res.$a_response][door]
