@@ -44,7 +44,15 @@ public class Page extends ProgramSection {
 
     @Override
     boolean containsComponentIdentifier(String identifier) {
-        return pageIdentifier.equals(identifier) || this.optionIdentifier.contains(identifier);
+        boolean inIf = false;
+        if(this.pageIfStatementMap.size() > 0)
+            for (IfStatement ifStmt : this.pageIfStatementMap)
+                if ( ((Option)ifStmt.getIfStatementDefinition()).getOptionIdentifier().equals(identifier)) {
+                    inIf = true;
+                    break;
+                }
+
+        return inIf || pageIdentifier.equals(identifier) || this.optionIdentifier.contains(identifier);
     }
 
     public void setPageIdentifier(String pageIdentifier) {
@@ -122,7 +130,13 @@ public class Page extends ProgramSection {
 
 
     public ArrayList<String> getPageOptions(){
-        return this.optionIdentifier;
+        ArrayList<String> options = new ArrayList<>();
+        options.addAll(this.optionIdentifier);
+        if(this.pageIfStatementMap.size() > 0)
+            options.addAll(this.pageIfStatementMap.stream()
+                    .map(stmt -> ((Option) stmt.getIfStatementDefinition()).getOptionIdentifier())
+                    .collect(Collectors.toList()));
+        return options;
     }
 
     public boolean addIfStatement(IfStatement ifStmt){
@@ -139,7 +153,13 @@ public class Page extends ProgramSection {
     }
 
     public ArrayList<String> getPageOptionText(){
-        return this.optionText;
+        ArrayList<String> text = new ArrayList<>();
+        text.addAll(this.optionText);
+        if(this.pageIfStatementMap.size() > 0)
+            text.addAll(this.pageIfStatementMap.stream()
+                    .map(stmt -> ((Option) stmt.getIfStatementDefinition()).getOptionText())
+                    .collect(Collectors.toList()));
+        return text;
     }
 
     @Override

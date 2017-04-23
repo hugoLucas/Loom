@@ -1,0 +1,137 @@
+PAGE{
+    TITLE:"Awakening"[$awaken_two_ops]
+
+    TEXT:"You wake up on the floor of a dark room."
+
+    OPTION[$a_awaken]:"Try to stand up."
+    OPTION[$b_awaken]:"Check your pockets."
+}
+
+PAGE{
+    TITLE:"Discovery"[$discovery_one_ops]
+
+    TEXT:"You find none of your possessions. However, your back pocket contains a key."
+
+    OPTION[$a_discovery]:"Try to stand up."
+}
+
+PAGE{
+    TITLE:"Chained"[$chained_two_ops]
+
+    TEXT:"While trying to stand up you realize your ankle has a manacle on it."
+
+    OPTION[$a_chained]:"Yell for help."
+    OPTION[$b_chained]:"Follow the chain."
+}
+
+PAGE{
+    TITLE:"Response"[$response_one_ops]
+
+    TEXT:"You yell for help and hear your voice echo in the room. Wherever you are, it's large."
+
+    OPTION[$a_response]:"Follow the chain."
+}
+
+PAGE{
+    TITLE:"Door"[$door_two_ops]
+
+    TEXT:"The chain ends at a wall. An old rusty lock is all that keeps in connect to the wall."
+
+    OPTION[$a_door]:"Try to break the lock."
+    IF[$discovery_one_ops.$a_discovery]:
+        OPTION[$b_door]:"Try out your key."
+    ENDIF
+}
+
+PAGE{
+    TITLE:"Failure"[$failure_one_ops]
+
+    TEXT:"You cannot break the lock."
+    IF[$discovery_one_ops.$a_discovery]:
+        OPTION[$a_failure]:"Try out your key."
+    ENDIF
+}
+
+PAGE{
+    TITLE:"Escape"[$escape_zero_ops]
+
+    TEXT:"The key opens the lock. You are free and begin to walk"
+}
+
+PAGE{
+    TITLE:"Death"[$death_zero_ops]
+
+    TEXT:"With no way to break or open the lock, you eventually die alone in the darkness."
+}
+
+PAGE{
+    TITLE:"Salvation"[$salvation_one_ops]
+
+    TEXT:"While stumbling around in dark you find a door."
+
+    OPTION[$a_salvation]:"Open the door."
+}
+
+PAGE{
+    TITLE:"Woops"[$woops_zero_ops]
+
+    TEXT:"It turns out this was all a dream. :)"
+}
+
+CHAPTER{
+    TITLE:"DarkRoom"[$ch_one]
+
+    awake:$awaken_two_ops
+    disc:$discovery_one_ops
+    chain:$chained_two_ops
+    res:$response_one_ops
+    door:$door_two_ops
+    fail:$failure_one_ops
+    esc:$escape_zero_ops
+    death:$death_zero_ops
+
+    PG[START]:awake
+    PG:disc
+    PG:chain
+    PG:res
+    PG:door
+    PG:fail
+    PG:death
+    PG[END]:esc
+
+    LINK[awake.$a_awaken][chain]
+    LINK[awake.$b_awaken][disc]
+    LINK[chain.$a_chained][res]
+    LINK[chain.$b_chained][door]
+    LINK[res.$a_response][door]
+    LINK[door.$a_door][fail]
+    LINK[door.$b_door][esc]
+    LINK[fail.$a_failure][death]
+}
+
+CHAPTER{
+    TITLE:"EscapeFromDarkRoom"[$ch_two]
+
+    sal:$salvation_one_ops
+    woo:$woops_zero_ops
+
+    PG[START]:sal
+    PG[END]:woo
+
+    LINK[sal.$a_salvation][woo]
+}
+
+SECTION{
+    TITLE:"OnlySection"[$sec_one]
+
+    CHAPT[START]:$ch_one
+    CHAPT[END]:$ch_two
+
+    LINK[$ch_one -> $ch_two]
+}
+
+STORY{
+    TITLE: "SampleTwo"
+
+    SEC[START]: $sec_one
+}
