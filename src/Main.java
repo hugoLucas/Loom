@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String inputString = fileToString("C:\\Users\\Hugo Lucas\\IdeaProjects\\Loom\\sample_input_two.txt");
+        String inputString = fileToString(args[0]);
         ANTLRInputStream input = new ANTLRInputStream(inputString);
         Loom2Lexer lexer = new Loom2Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
