@@ -7,7 +7,13 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String inputString = fileToString(args[0]);
+        String inputString;
+        try {
+            inputString = fileToString(args[0]);
+        }catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Please specify a Loom text file!");
+            return;
+        }
         ANTLRInputStream input = new ANTLRInputStream(inputString);
         Loom2Lexer lexer = new Loom2Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -16,12 +22,15 @@ public class Main {
         ParseTree tree = parser.program();
 
         ProgramVisitor vis = new ProgramVisitor();
+
+        System.out.println("Parsing input file...");
         Program program = vis.visit(tree);
 
         if(program.wasThereAnError())
             System.out.println(program.returnErrorMessage());
         else{
             /* Code generation goes in here ! */
+            System.out.println("Generating code...");
             CodeGenerator gen = new CodeGenerator(program);
             gen.build();
         }
