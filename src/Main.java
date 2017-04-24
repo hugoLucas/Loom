@@ -18,21 +18,26 @@ public class Main {
         Loom2Lexer lexer = new Loom2Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
+        LoomErrorListener listener = new LoomErrorListener();
         Loom2Parser parser = new Loom2Parser(tokens);
+        parser.removeErrorListeners();
+        parser.addErrorListener(listener);
         ParseTree tree = parser.program();
 
-        ProgramVisitor vis = new ProgramVisitor();
+        if(!listener.wasThereAnError()) {
+            ProgramVisitor vis = new ProgramVisitor();
 
-        System.out.println("Parsing input file...");
-        Program program = vis.visit(tree);
+            System.out.println("Parsing input file...");
+            Program program = vis.visit(tree);
 
-        if(program.wasThereAnError())
-            System.out.println(program.returnErrorMessage());
-        else{
+            if (program.wasThereAnError())
+                System.out.println(program.returnErrorMessage());
+            else {
             /* Code generation goes in here ! */
-            System.out.println("Generating code...");
-            CodeGenerator gen = new CodeGenerator(program);
-            gen.build();
+                System.out.println("Generating code...");
+                CodeGenerator gen = new CodeGenerator(program);
+                gen.build();
+            }
         }
     }
 
